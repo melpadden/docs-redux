@@ -1,4 +1,4 @@
-name: Validate External Links
+name: SUB - Rollback
 on:
     workflow_call:
         inputs:
@@ -11,12 +11,12 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/download-artifact@master
-                with:
-                    name: gh-pages-backup
-                    path: ${{ inputs.working_directory }}
+              with:
+                name: gh-pages-backup
+                path: ${{ inputs.working_directory }}
 
             - name: Deploy the previous version to Github Pages
-                uses: peaceiris/actions-gh-pages@068dc23d9710f1ba62e86896f84735d869951305
-                with:
-                    github_token: ${{ secrets.GITHUB_TOKEN }}
-                    publish_dir:  ${{ inputs.working_directory }}
+              uses: peaceiris/actions-gh-pages@068dc23d9710f1ba62e86896f84735d869951305
+              with:
+                github_token: ${{ secrets.GITHUB_TOKEN }}
+                publish_dir:  ${{ inputs.working_directory }}
