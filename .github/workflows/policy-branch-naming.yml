@@ -1,4 +1,4 @@
-name: Branch Naming Policy Action
+name: POLICY - Branch Naming 
 
 on:
   create:

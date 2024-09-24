@@ -1,4 +1,4 @@
-name: SUB-build
+name: SUB - build
 on:
     workflow_call:
         inputs:

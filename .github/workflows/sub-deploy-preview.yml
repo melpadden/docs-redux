@@ -1,4 +1,4 @@
-name: Deploy Preview
+name: SUB - Deploy Netlify
 on:
     workflow_call:
         inputs:

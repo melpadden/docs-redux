@@ -1,4 +1,4 @@
-name: Build and Deploy - Staging
+name: SUB - Deploy Staging
 
 env:
     prod_pages_fqdn: ${{ vars.PROD_PAGES_FQDN }}
@@ -12,15 +12,14 @@ on:
 
 jobs:
     build:
-      uses: ./.github/workflows/sub/build.yml
+      uses: ./.github/workflows/sub-build.yml
       with:
             environment: development
             selected_node_version: 21.6
             base_url: "http://staging.docs.casper.network"
             site_url: "http://staging.docs.casper.network"
 
-    deploy-preview:
-        if: github.event_name == 'pull_request'
+    deploy-staging:
         needs: [build]
         runs-on: ubuntu-latest
 
@@ -28,7 +27,7 @@ jobs:
             - uses: actions/download-artifact@master
               with:
                   name: gh-pages-depl-payload
-                  path: ./docs
+                  path: $working_directory
 
             - name: Deploy to Netlify
               uses: nwtgck/actions-netlify@v2.1
