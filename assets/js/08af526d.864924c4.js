@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcspr_docs=self.webpackChunkcspr_docs||[]).push([[30529],{41344:e=>{e.exports=JSON.parse('{"metadata":{"permalink":"/blog","page":1,"postsPerPage":5,"totalPages":1,"totalCount":5,"blogDescription":"A blog about all things to do with developing on the Casper Blockchain","blogTitle":"Casper Developer Relations Blog"}}')}}]);
