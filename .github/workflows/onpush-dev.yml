@@ -1,4 +1,4 @@
-name: Staging Build and Deploy
+name: ON_PUSH - Staging Build and Deploy
 
 env:
   pages_domain: "casperdocs.paddentech.com"
