@@ -1,4 +1,4 @@
-name: SUB - Deploy To Github
+name: SUB - Deploy Production
 on:
   workflow_call:
     inputs:
