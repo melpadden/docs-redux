@@ -1,11 +1,11 @@
-name: ON_TRIGGER - Staging Build and Deploy
+name: ON_TRIGGER - Build
 
 env:
-  pages_domain: "casperdocs.paddentech.com"
+  pages_domain: "docs.casper.network"
   selected_node_version: 21.6
   working_directory: ./build
-  site_url: "http://casperdocs.paddentech.com/"
-  base_url: "http://casperdocs.paddentech.com/"
+  site_url: "http://docs.casper.network/"
+  base_url: "http://docs.casper.network/"
 
 on:
   workflow_dispatch:
