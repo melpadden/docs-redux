@@ -1,4 +1,4 @@
-name: system-tests-predeployment
+name: SUB - Pre-deployment Tests
 on:
     workflow_call:
         inputs:
