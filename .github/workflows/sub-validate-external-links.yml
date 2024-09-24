@@ -1,4 +1,4 @@
-name: Validate External Links
+name: SUB - Validate External Links
 on:
     workflow_call:
         inputs:
@@ -14,15 +14,15 @@ jobs:
             - uses: actions/checkout@v3
 
             - name: Use Node.js ${{ env.selected_node_version }}
-            uses: actions/setup-node@v3
-            with:
+              uses: actions/setup-node@v3
+              with:
                 node-version: ${{ env.selected_node_version }}
                 cache: yarn
 
             - name: Yarn install
-            run: |
+              run: |
                 yarn install
 
             - name: Validate external links
-            run: |
+              run: |
                 cd cspr-docs && yarn check:externals
