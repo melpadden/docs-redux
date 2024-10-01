@@ -32,7 +32,7 @@ jobs:
             - name: Deploy to Netlify
               uses: nwtgck/actions-netlify@v2.1
               with:
-                  publish-dir: "docs"
+                  publish-dir: $working_directory
                   production-deploy: false
                   github-token: ${{ secrets.GITHUB_TOKEN }}
                   deploy-message: 'Preview Deploy'
