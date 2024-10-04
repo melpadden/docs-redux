@@ -48,7 +48,7 @@ module.exports = {
             position: "left",
         },
         {
-            to: `https://github.com/casper-network/docs-redux/issues/new?assignees=&labels=docs-v2-feedback&projects=&template=feedback.yml&title=Docs+Feedback`,
+            to: `https://github.com/casper-network/docs-redux/issues/new?template=feedback.yml`,
             label: "Feedback",
             position: "right",
         },

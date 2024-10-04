@@ -3,10 +3,6 @@ description: Use this form to give us feedback on Docs v2
 title: '[Docs-V2-Feedback]'
 labels:
   - docs-v2-feedback
-assignees:
-  - melpadden
-  - sczembor
-  - dylanireland
 body:
   - type: markdown
     attributes:
