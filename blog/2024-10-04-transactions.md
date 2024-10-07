@@ -38,10 +38,8 @@ Casper 2.0 Native Transaction Types:
 - System.Auction.Staking.Submit
 - System.Auction.Staking.Withdraw
 
-Not all work is identical, e.g. a base token (cspr) transfer differs from a smart contract execution.  Therefore
-
-A transaction interacts on-chain smart contracts, such contracts are either system defined or user defined.either system During processing a transaction results in a set of interactions with on-chain contracts.
+Not all work is identical, e.g. a base token (cspr) transfer differs from a smart contract execution.  
 
 Casper 1.0 supported a set of 6 transaction types, in Casper 2.0 the set is both refined and expanded.
 
-
+The Transaction stat type has a number of changes from its predecessor, the Deploy. For a detailed discussion of these differences you can see the casper documentation of this discussion of the JSON schema. 
