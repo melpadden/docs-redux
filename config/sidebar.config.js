@@ -100,6 +100,7 @@ module.exports = {
         "concepts/addressable-entity",
         "concepts/accounts-and-keys",
         "concepts/key-types",
+        "concepts/transactions",
         "concepts/transactions-and-transaction-lifecycle",
         "concepts/global-state",
         "concepts/smart-contracts",

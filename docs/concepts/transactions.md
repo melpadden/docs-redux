@@ -1,6 +1,5 @@
 ---
 title: Transactions
-slug: /transactions
 ---
 
 # Transactions
