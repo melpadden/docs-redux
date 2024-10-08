@@ -41,33 +41,33 @@ The biggest immediately obvious change in the RPC is the change in name from dep
 
 ### JSON-RPC Schema Definitions
 
-See [here](./024-jsonrpc-comp/rpc-1.5/schema.json) for Casper 1.5 node JSON-RPC.
+See [here](./_024-jsonrpc-comp/rpc-1.5/schema.json) for Casper 1.5 node JSON-RPC.
 
-See [here](./024-jsonrpc-comp/rpc-2.0/schema.json) for Casper 2.0 node JSON-RPC.
+See [here](./_024-jsonrpc-comp/rpc-2.0/schema.json) for Casper 2.0 node JSON-RPC.
 
 ## Table of v1.5 & v2.0 JSON-RPC API differences
 
 | Function in v1.5                      | Function in v2.0                      |Remarks|
 | ---                                   | ---                                   | --- |
-| [account_put_deploy](./024-jsonrpc-comp/rpc-1.5/account_put_deploy.json)                                      | [account_put_transaction](./024-jsonrpc-comp/rpc-2.0/account_put_transaction.json)                            | [Renamed](./024-jsonrpc-comp/account_put_transaction.md)     |  
-| [chain_get_block_transfers](./024-jsonrpc-comp/rpc-1.5/chain_get_block_transfers.json)                        | [chain_get_block_transfers](./024-jsonrpc-comp/rpc-2.0/chain_get_block_transfers.json)                        | Unchanged     |
-| [chain_get_block](./024-jsonrpc-comp/rpc-1.5/chain_get_block.json)                                            | [chain_get_block](./024-jsonrpc-comp/rpc-2.0/chain_get_block.json)                                            | [Now returns Block with Signatures](./024-jsonrpc-comp/chain_get_block.md)         |
-| [chain_get_era_info_by_switch_block](./024-jsonrpc-comp/rpc-1.5/chain_get_era_info_by_switch_block.json)      | [chain_get_era_info_by_switch_block](./024-jsonrpc-comp/rpc-2.0/chain_get_era_info_by_switch_block.json)      | Unchanged     |
-| [chain_get_era_summary](./024-jsonrpc-comp/rpc-1.5/chain_get_era_summary.json)                                | [chain_get_era_summary](./024-jsonrpc-comp/rpc-2.0/chain_get_era_summary.json)                                | Unchanged     |
-| [chain_get_state_root_hash](./024-jsonrpc-comp/rpc-1.5/chain_get_state_root_hash.json)                        | [chain_get_state_root_hash](./024-jsonrpc-comp/rpc-2.0/chain_get_state_root_hash.json)                        | Unchanged     |
-| [info_get_chainspec](./024-jsonrpc-comp/rpc-1.5/info_get_chainspec.json)                                      | [info_get_chainspec](./024-jsonrpc-comp/rpc-2.0/info_get_chainspec.json)                                      | Unchanged     |
-| [info_get_deploy](./024-jsonrpc-comp/rpc-1.5/info_get_deploy.json)                                            | [info_get_transaction](./024-jsonrpc-comp/rpc-2.0/info_get_transaction.json)                                  | [Renamed](./024-jsonrpc-comp/info_get_transaction.md)    |
-| [info_get_peers](./024-jsonrpc-comp/rpc-1.5/info_get_peers.json)                                              | [info_get_peers](./024-jsonrpc-comp/rpc-2.0/info_get_peers.json)                                              | Unchanged     |
-| [info_get_status](./024-jsonrpc-comp/rpc-1.5/info_get_status.json)                                            | [info_get_status](./024-jsonrpc-comp/rpc-2.0/info_get_status.json)                                            | Latest [switch block hash](./024-jsonrpc-comp/rpc-2.0/components/BlockHash.json) included in result     |
-| [info_get_validator_changes](./024-jsonrpc-comp/rpc-1.5/info_get_validator_changes.json)                      | [info_get_validator_changes](./024-jsonrpc-comp/rpc-2.0/info_get_validator_changes.json)                      | Unchanged     |
-| [query_balance](./024-jsonrpc-comp/rpc-1.5/query_balance.json)                                                | [query_balance](./024-jsonrpc-comp/rpc-2.0/query_balance.json)                                                | Unchanged     |
-|                                                                                                               | [query_balance_details](./024-jsonrpc-comp/rpc-2.0/query_balance_details.json)                                | Added         |
-| [query_global_state](./024-jsonrpc-comp/rpc-1.5/query_global_state.json)                                      | [query_global_state](./024-jsonrpc-comp/rpc-2.0/query_global_state.json)                                      | Unchanged     |
-| [state_get_account_info](./024-jsonrpc-comp/rpc-1.5/state_get_account_info.json)                              | [state_get_account_info](./024-jsonrpc-comp/rpc-2.0/state_get_account_info.json)                              | Unchanged     |
-| [state_get_auction_info](./024-jsonrpc-comp/rpc-1.5/state_get_auction_info.json)                              | [state_get_auction_info](./024-jsonrpc-comp/rpc-2.0/state_get_auction_info.json)                              | Unchanged     |
-| [state_get_balance](./024-jsonrpc-comp/rpc-1.5/state_get_balance.json)                                        | [state_get_balance](./024-jsonrpc-comp/rpc-2.0/state_get_balance.json)                                        | [Balance now reflects all active holds](./024-jsonrpc-comp/state_get_balance.md)     |
-| [state_get_dictionary_item](./024-jsonrpc-comp/rpc-1.5/state_get_dictionary_item.json)                        | [state_get_dictionary_item](./024-jsonrpc-comp/rpc-2.0/state_get_dictionary_item.json)                        | Unchanged     |
-| [state_get_item](./024-jsonrpc-comp/rpc-1.5/state_get_item.json)                                              | [state_get_entity](./024-jsonrpc-comp/rpc-2.0/state_get_entity.json)                                          | Renamed    |
+| [account_put_deploy](./_024-jsonrpc-comp/rpc-1.5/account_put_deploy.json)                                      | [account_put_transaction](./_024-jsonrpc-comp/rpc-2.0/account_put_transaction.json)                            | [Renamed](./_024-jsonrpc-comp/account_put_transaction.md)     |  
+| [chain_get_block_transfers](./_024-jsonrpc-comp/rpc-1.5/chain_get_block_transfers.json)                        | [chain_get_block_transfers](./_024-jsonrpc-comp/rpc-2.0/chain_get_block_transfers.json)                        | Unchanged     |
+| [chain_get_block](./_024-jsonrpc-comp/rpc-1.5/chain_get_block.json)                                            | [chain_get_block](./_024-jsonrpc-comp/rpc-2.0/chain_get_block.json)                                            | [Now returns Block with Signatures](./_024-jsonrpc-comp/chain_get_block.md)         |
+| [chain_get_era_info_by_switch_block](./_024-jsonrpc-comp/rpc-1.5/chain_get_era_info_by_switch_block.json)      | [chain_get_era_info_by_switch_block](./_024-jsonrpc-comp/rpc-2.0/chain_get_era_info_by_switch_block.json)      | Unchanged     |
+| [chain_get_era_summary](./_024-jsonrpc-comp/rpc-1.5/chain_get_era_summary.json)                                | [chain_get_era_summary](./_024-jsonrpc-comp/rpc-2.0/chain_get_era_summary.json)                                | Unchanged     |
+| [chain_get_state_root_hash](./_024-jsonrpc-comp/rpc-1.5/chain_get_state_root_hash.json)                        | [chain_get_state_root_hash](./_024-jsonrpc-comp/rpc-2.0/chain_get_state_root_hash.json)                        | Unchanged     |
+| [info_get_chainspec](./_024-jsonrpc-comp/rpc-1.5/info_get_chainspec.json)                                      | [info_get_chainspec](./_024-jsonrpc-comp/rpc-2.0/info_get_chainspec.json)                                      | Unchanged     |
+| [info_get_deploy](./_024-jsonrpc-comp/rpc-1.5/info_get_deploy.json)                                            | [info_get_transaction](./_024-jsonrpc-comp/rpc-2.0/info_get_transaction.json)                                  | [Renamed](./_024-jsonrpc-comp/info_get_transaction.md)    |
+| [info_get_peers](./_024-jsonrpc-comp/rpc-1.5/info_get_peers.json)                                              | [info_get_peers](./_024-jsonrpc-comp/rpc-2.0/info_get_peers.json)                                              | Unchanged     |
+| [info_get_status](./_024-jsonrpc-comp/rpc-1.5/info_get_status.json)                                            | [info_get_status](./_024-jsonrpc-comp/rpc-2.0/info_get_status.json)                                            | Latest [switch block hash](./_024-jsonrpc-comp/rpc-2.0/components/BlockHash.json) included in result     |
+| [info_get_validator_changes](./_024-jsonrpc-comp/rpc-1.5/info_get_validator_changes.json)                      | [info_get_validator_changes](./_024-jsonrpc-comp/rpc-2.0/info_get_validator_changes.json)                      | Unchanged     |
+| [query_balance](./_024-jsonrpc-comp/rpc-1.5/query_balance.json)                                                | [query_balance](./_024-jsonrpc-comp/rpc-2.0/query_balance.json)                                                | Unchanged     |
+|                                                                                                               | [query_balance_details](./_024-jsonrpc-comp/rpc-2.0/query_balance_details.json)                                | Added         |
+| [query_global_state](./_024-jsonrpc-comp/rpc-1.5/query_global_state.json)                                      | [query_global_state](./_024-jsonrpc-comp/rpc-2.0/query_global_state.json)                                      | Unchanged     |
+| [state_get_account_info](./_024-jsonrpc-comp/rpc-1.5/state_get_account_info.json)                              | [state_get_account_info](./_024-jsonrpc-comp/rpc-2.0/state_get_account_info.json)                              | Unchanged     |
+| [state_get_auction_info](./_024-jsonrpc-comp/rpc-1.5/state_get_auction_info.json)                              | [state_get_auction_info](./_024-jsonrpc-comp/rpc-2.0/state_get_auction_info.json)                              | Unchanged     |
+| [state_get_balance](./_024-jsonrpc-comp/rpc-1.5/state_get_balance.json)                                        | [state_get_balance](./_024-jsonrpc-comp/rpc-2.0/state_get_balance.json)                                        | [Balance now reflects all active holds](./_024-jsonrpc-comp/state_get_balance.md)     |
+| [state_get_dictionary_item](./_024-jsonrpc-comp/rpc-1.5/state_get_dictionary_item.json)                        | [state_get_dictionary_item](./_024-jsonrpc-comp/rpc-2.0/state_get_dictionary_item.json)                        | Unchanged     |
+| [state_get_item](./_024-jsonrpc-comp/rpc-1.5/state_get_item.json)                                              | [state_get_entity](./_024-jsonrpc-comp/rpc-2.0/state_get_entity.json)                                          | Renamed    |
 
 
 ---
