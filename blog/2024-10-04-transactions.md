@@ -4,7 +4,7 @@ description: A discussion of the new Transaction data type
 slug: condor-transaction
 date: 2024-10-03T18:00
 authors: [ asladeofgreen ]
-tags: [condor, execution, smartcontracts]
+tags: [condor, smartcontracts]
 hide_table_of_contents: false
 ---
 

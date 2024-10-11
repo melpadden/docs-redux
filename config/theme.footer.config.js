@@ -1,5 +1,5 @@
 module.exports = {
-    
+
     logo: {
         alt: 'Casper Logo',
         src: '/icon/Casper_Wordmark_Horizontal_Red_RGB.png',
@@ -12,6 +12,25 @@ module.exports = {
 
     copyright: `Copyright © ${new Date().getFullYear()} Casper Association. Built with Docusaurus.`,
     links: [
-        //TODO: Add some relevant links here
+        {
+            href: "https://support.casperlabs.io/",
+            label: "Support",
+            position: "right",
+        },
+        {
+            href: "https://discord.com/invite/casperblockchain",
+            label: "Discord",
+            position: "right",
+        },
+        {
+            href: "https://github.com/casper-devrel/docs-redux",
+            label: "GitHub",
+            position: "right",
+        },
+        {
+            href: "./disclaimer.md",
+            label: "Disclaimer",
+            position: "right",
+        },
     ]
 }

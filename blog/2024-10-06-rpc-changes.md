@@ -4,7 +4,7 @@ description: A discussion of the changes to the JSON RPC in Casper v2.0
 slug: condor-jsonrpc
 date: 2024-10-06T18:00
 authors: [ melpadden ]
-tags: [condor, jsonrpc]
+tags: [condor, json-rpc]
 hide_table_of_contents: false
 ---
 

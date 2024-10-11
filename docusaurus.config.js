@@ -22,12 +22,7 @@ const config = {
   favicon: "icon/favicon.ico",
   url: globalConfig.siteUrl,
   baseUrl: globalConfig.baseUrl,
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
   ...githubPagesConfig,
-  // organizationName: 'casper-devrel',
-  // projectName: 'docs-redux',
-  // deploymentBranch: 'gh-pages',
   trailingSlash: true,
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
@@ -58,19 +53,13 @@ const config = {
             ? "/"
             : globalConfig.routePrefix, // IMPORTANT: Turn on docs-only mode
           exclude: [
-            "./contract-dsl/archived",
-            "./economics/archived",
-            "./theory",
+            // "./contract-dsl/archived",
+            // "./economics/archived",
+            // "./theory",
           ],
           showLastUpdateTime: true,
           showLastUpdateAuthor: true,
-          lastVersion: 'current',
-          // versions: {
-          //   current: {
-          //     label: '1.0.0',
-          //     path: '1.0.0',
-          //   },
-          // },
+          lastVersion: '2.0.0',
         },
         blog: {
           path: "./blog",
@@ -81,6 +70,9 @@ const config = {
           postsPerPage: "ALL",
           blogSidebarTitle: "All posts",
           blogSidebarCount: "ALL",
+          showReadingTime: true, // When set to false, the "x min read" won't be shown
+          readingTime: ({content, frontMatter, defaultReadingTime}) =>
+            defaultReadingTime({content, options: {wordsPerMinute: 300}}),
         },
         // pages: {
         //   path: 'src/pages',

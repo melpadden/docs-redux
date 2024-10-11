@@ -48,18 +48,13 @@ module.exports = {
             position: "left",
         },
         {
-            to: `https://github.com/casper-network/docs-redux/issues/new?template=feedback.yml`,
-            label: "Feedback",
-            position: "right",
-        },
-        {
             to: 'blog/tags/condor', 
             label: 'Condor', 
             position: 'right' 
         },
         { 
             to: 'blog', 
-            label: 'Blog', 
+            label: 'Blog Articles', 
             position: 'right' 
         },
         {
@@ -67,24 +62,29 @@ module.exports = {
             position: "right",
         },
         {
+            to: `https://github.com/casper-network/docs-redux/issues/new?template=feedback.yml`,
+            label: "Submit Feedback",
+            position: "right",
+        },
+        {
             type: "docsVersionDropdown",
             position: "right",
             dropdownActiveClassDisabled: true,
         },
-        {
-            href: "https://support.casperlabs.io/",
-            label: "Support",
-            position: "right",
-        },
-        {
-            href: "https://discord.com/invite/casperblockchain",
-            label: "Discord",
-            position: "right",
-        },
-        {
-            href: "https://github.com/casper-devrel/docs-redux",
-            label: "GitHub",
-            position: "right",
-        },
+        // {
+        //     href: "https://support.casperlabs.io/",
+        //     label: "Support",
+        //     position: "right",
+        // },
+        // {
+        //     href: "https://discord.com/invite/casperblockchain",
+        //     label: "Discord",
+        //     position: "right",
+        // },
+        // {
+        //     href: "https://github.com/casper-devrel/docs-redux",
+        //     label: "GitHub",
+        //     position: "right",
+        // },
     ],
 };

@@ -9,7 +9,16 @@ validators:
   description: 'Validators'
 
 setup:
-  label: 'Set-up'
+  label: 'Setup'
   permalink: '/setup'
   description: 'Getting set up on Casper'
+
+consensus:
+  label: 'Consensus'
+
+smart-contracts:
+  label: 'Smart Contracts'
+
+json-rpc:
+  label: 'JSON RPC'
 
