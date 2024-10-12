@@ -2,11 +2,9 @@
 
 ## Overview
 
-Welcome to the documentation website for the [Casper Network](https://casper.network/). The documentation lives at this address: https://docs.casper.network/.
+This is the documentation repository for the [Casper Network](https://casper.network/). 
 
+The documentation site itself may be viewed at this address: https://docs.casper.network/.
 
-Preliminary hosting here: 
-[https://casper-devrel.github.io/docs-redux/](https://casper-devrel.github.io/docs-redux/)
-
-[http://casperdocs.paddentech.com/](http://casperdocs.paddentech.com/)
+For instructions on how to build, run, edit and contribute to this documentation please refer to the [developer documentation](./README/INDEX.md). 
 
