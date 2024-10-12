@@ -49,7 +49,7 @@ module.exports = {
         },
         {
             to: 'blog/tags/condor', 
-            label: 'Condor', 
+            label: 'Condor Articles', 
             position: 'right' 
         },
         { 
@@ -69,6 +69,7 @@ module.exports = {
         {
             type: "docsVersionDropdown",
             position: "right",
+            label:"Docs Version:",
             dropdownActiveClassDisabled: true,
         },
         // {

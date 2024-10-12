@@ -29,30 +29,19 @@ The Nav bar is along the top of your screen and contains the following elements 
 
 
 - **Search**  
-  This The Resources section contains general information that is useful to many users of the chain.
-
-
+  Standard text-bysed Search facility, searches both the Blog and the Casper Docs for your search queries.
 
 - **Feedback**  
-  This The Resources section contains general information that is useful to many users of the chain.
-
+  Allows you to submit requests for improvement to this docs site.
 
 - **Condor**  
-  This The Resources section contains general information that is useful to many users of the chain.
-
+  This brings you to the blog posts tagged with "Condor".
 
 - **Blog**  
-  This The Resources section contains general information that is useful to many users of the chain.
+  This brings you to the Bliog secton of the docs site, where long form articles can be published. 
 
 
 
-
-### Navigation/Layout
-
-#### Nav bar and Sidebar
-The Nav bar is arranged along the top of your browser window, and may be broken down into left and right. On the left hand side, you will see 5 links, each of which corresponds to one of the main subject areas. There are 5 Sidebars, each of which contains links to content broken down by subject area within the documentation. 
-
-
-## Disclaimer
+### Disclaimer
 
 [Legal Disclaimer](./disclaimer.md). 
