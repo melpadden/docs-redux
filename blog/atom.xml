@@ -2,11 +2,248 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://casper-network.github.io/blog/</id>
     <title>Casper Docs - Redux Blog</title>
-    <updated>2024-08-20T18:00:00.000Z</updated>
+    <updated>2024-10-06T18:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://casper-network.github.io/blog/"/>
     <subtitle>Casper Docs - Redux Blog</subtitle>
     <icon>https://casper-network.github.io/icon/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[JSON RPC Changes in Casper 2.0]]></title>
+        <id>https://casper-network.github.io/blog/condor-jsonrpc/</id>
+        <link href="https://casper-network.github.io/blog/condor-jsonrpc/"/>
+        <updated>2024-10-06T18:00:00.000Z</updated>
+        <summary type="html"><![CDATA[A discussion of the changes to the JSON RPC in Casper v2.0]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="introduction">Introduction<a href="https://casper-network.github.io/blog/condor-jsonrpc/#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction">​</a></h2>
+<p>This article is intended for developers consuming the Casper 2.0 (AKA Condor) JSON RPC, such as dApp developers, SDK developers, or others relying on the JSON-RPC API. In this article we examine the JSON-RPC  and break down the <a href="https://casper-network.github.io/blog/condor-jsonrpc/#differences-between-v15-and-v20">differences between v1.5.6 and v2.0.0</a>.</p>
+<p>Since the network's inception, the Casper node has exposed an API over HTTP, using JSON, which is known as the JSON-RPC. This API allows client software such as dApps and SDKs to communicate and interact with the node, giving access to query node state, chain state, balance details and other information, as well as to write information to the chain by submitting transactions.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="changes-for-v20">Changes for v2.0<a href="https://casper-network.github.io/blog/condor-jsonrpc/#changes-for-v20" class="hash-link" aria-label="Direct link to Changes for v2.0" title="Direct link to Changes for v2.0">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="casper-sidecar">Casper Sidecar<a href="https://casper-network.github.io/blog/condor-jsonrpc/#casper-sidecar" class="hash-link" aria-label="Direct link to Casper Sidecar" title="Direct link to Casper Sidecar">​</a></h3>
+<p>One of the major changes in the Condor upgrade is the new <a href="https://github.com/casper-network/casper-sidecar" target="_blank" rel="noopener noreferrer">casper-sidecar</a>. The sidecar runs in a <strong>dedicated</strong> process and and is bound to a node's binary port and/or SSE port.  The sidecar assumes <strong>all</strong> responsibility for running the JSON-RPC server and exposing the JSON-RPC endpoints to the internet, i.e. the node software itself no longer exposes a JSON RPC API to the consumer - <u>this job is now done by the sidecar</u>.</p>
+<p>Because the sidecar runs in a dedicated process, it is possible to run a sidecar upon a different machine to the node.  However in practice, most node operators will likely operate a sidecar process on the same machine as the node.  Furthermore an operator's deployment setup is opaque to to a DApp that interacts with the JSON-RPC API via an SDK.</p>
+<p>There are several benefits to moving the JSON-RPC API to a sidecar:</p>
+<ul>
+<li>The JSON-RPC API can now evolve independently of the node</li>
+<li>A node operator now has a finer degree of control over their operational setup</li>
+<li>The sidecar reduces the amount of work that the node itself has to do, thereby simplifying the deployment of alternative node implementations (e.g. mojo, go, zig, c++)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="node-binary-port">Node Binary Port<a href="https://casper-network.github.io/blog/condor-jsonrpc/#node-binary-port" class="hash-link" aria-label="Direct link to Node Binary Port" title="Direct link to Node Binary Port">​</a></h3>
+<p>The Casper 2.0 Node now exposes a pure Binary Port API, which allows connection over TCP/IP and pure binary serialization for your remote procedure calls.  Depending on your use case, you may be interested in considering this option for interacting with Casper Condor. In general, the binary port offers better performance and features compared to the JSON RPC.  A detailed discussion of the Binary Port will be contained in a future article.  It is anticipated that all SDKs will be updated so as to support the new Binary Port API.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="json-rpc-differences">JSON-RPC Differences<a href="https://casper-network.github.io/blog/condor-jsonrpc/#json-rpc-differences" class="hash-link" aria-label="Direct link to JSON-RPC Differences" title="Direct link to JSON-RPC Differences">​</a></h4>
+<p>The biggest immediately obvious change in the RPC is the change in name from deploy to transaction.  Casper 1.X used the name "deploy" for a unit of work submitted to the blockchain, in Condor a unit of work is now renamed as "Transaction".</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="json-rpc-schema-definitions">JSON-RPC Schema Definitions<a href="https://casper-network.github.io/blog/condor-jsonrpc/#json-rpc-schema-definitions" class="hash-link" aria-label="Direct link to JSON-RPC Schema Definitions" title="Direct link to JSON-RPC Schema Definitions">​</a></h3>
+<p>See <a href="https://casper-network.github.io/assets/files/schema-ce788c9798c931d17975612c4bf7fab4.json/" target="_blank">here</a> for Casper 1.5 node JSON-RPC.</p>
+<p>See <a href="https://casper-network.github.io/assets/files/schema-2bf2cc9f93aa2c19bf469029bc0861a1.json/" target="_blank">here</a> for Casper 2.0 node JSON-RPC.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="table-of-v15--v20-json-rpc-api-differences">Table of v1.5 &amp; v2.0 JSON-RPC API differences<a href="https://casper-network.github.io/blog/condor-jsonrpc/#table-of-v15--v20-json-rpc-api-differences" class="hash-link" aria-label="Direct link to Table of v1.5 &amp; v2.0 JSON-RPC API differences" title="Direct link to Table of v1.5 &amp; v2.0 JSON-RPC API differences">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Function in v1.5</th><th>Function in v2.0</th><th>Remarks</th></tr></thead><tbody><tr><td><a href="https://casper-network.github.io/assets/files/account_put_deploy-081b092f2252c775d0990bbed6ecc03f.json/" target="_blank">account_put_deploy</a></td><td><a href="https://casper-network.github.io/assets/files/account_put_transaction-90596df6489be2fae3dea672104a6bf4.json/" target="_blank">account_put_transaction</a></td><td><a href="https://casper-network.github.io/blog/condor-jsonrpc/_024-jsonrpc-comp/account_put_transaction.md/">Renamed</a></td></tr><tr><td><a href="https://casper-network.github.io/assets/files/chain_get_block_transfers-726c41bbce7df0de8421e99d61123543.json/" target="_blank">chain_get_block_transfers</a></td><td><a href="https://casper-network.github.io/assets/files/chain_get_block_transfers-12dd68fe039c1c780a863727aa5461a5.json/" target="_blank">chain_get_block_transfers</a></td><td>Unchanged</td></tr><tr><td><a href="https://casper-network.github.io/assets/files/chain_get_block-6c6b52bc7f81ee04c84942a243ad25b8.json/" target="_blank">chain_get_block</a></td><td><a href="https://casper-network.github.io/assets/files/chain_get_block-a686366f13d40575411e9e3d95ddfa01.json/" target="_blank">chain_get_block</a></td><td><a href="https://casper-network.github.io/blog/condor-jsonrpc/_024-jsonrpc-comp/chain_get_block.md/">Now returns Block with Signatures</a></td></tr><tr><td><a href="https://casper-network.github.io/assets/files/chain_get_era_info_by_switch_block-f5e7584f6f938e4dbf3fe786499a040f.json/" target="_blank">chain_get_era_info_by_switch_block</a></td><td><a href="https://casper-network.github.io/assets/files/chain_get_era_info_by_switch_block-c8a38f3bdab70cc09b82ae2dc20a4491.json/" target="_blank">chain_get_era_info_by_switch_block</a></td><td>Unchanged</td></tr><tr><td><a href="https://casper-network.github.io/assets/files/chain_get_era_summary-ba632091d7d95db795f5aeb87d446f0f.json/" target="_blank">chain_get_era_summary</a></td><td><a href="https://casper-network.github.io/assets/files/chain_get_era_summary-77a788200a987270c2a209b74eae3ca4.json/" target="_blank">chain_get_era_summary</a></td><td>Unchanged</td></tr><tr><td><a href="https://casper-network.github.io/assets/files/chain_get_state_root_hash-64d2218e93ac0dd56e85156cc61f6d76.json/" target="_blank">chain_get_state_root_hash</a></td><td><a href="https://casper-network.github.io/assets/files/chain_get_state_root_hash-ce0a003c5be1772a64f8690737c68264.json/" target="_blank">chain_get_state_root_hash</a></td><td>Unchanged</td></tr><tr><td><a href="https://casper-network.github.io/assets/files/info_get_chainspec-a2590f1d58e097012d30493d4b2973e2.json/" target="_blank">info_get_chainspec</a></td><td><a href="https://casper-network.github.io/assets/files/info_get_chainspec-aeb5e86b074b1dfcffbaf5b6c51b78ea.json/" target="_blank">info_get_chainspec</a></td><td>Unchanged</td></tr><tr><td><a href="https://casper-network.github.io/assets/files/info_get_deploy-9ae7fd73dc5a4548f6cc28eac97e0802.json/" target="_blank">info_get_deploy</a></td><td><a href="https://casper-network.github.io/assets/files/info_get_transaction-bd976a13abc1f6ad800002c8f3003aac.json/" target="_blank">info_get_transaction</a></td><td><a href="https://casper-network.github.io/blog/condor-jsonrpc/_024-jsonrpc-comp/info_get_transaction.md/">Renamed</a></td></tr><tr><td><a href="https://casper-network.github.io/assets/files/info_get_peers-f1777e239399f26291ad2ebbb0024dc3.json/" target="_blank">info_get_peers</a></td><td><a href="https://casper-network.github.io/assets/files/info_get_peers-096696106a51e69e2d690b211ef6ac6c.json/" target="_blank">info_get_peers</a></td><td>Unchanged</td></tr><tr><td><a href="https://casper-network.github.io/assets/files/info_get_status-66ab82fbb3d38fea8eff2d1f5e4a3598.json/" target="_blank">info_get_status</a></td><td><a href="https://casper-network.github.io/assets/files/info_get_status-99eb6601085ebc75bf594671573c2a8d.json/" target="_blank">info_get_status</a></td><td>Latest <a href="https://casper-network.github.io/assets/files/BlockHash-ea314c5144577bfaf55859d28b24e709.json/" target="_blank">switch block hash</a> included in result</td></tr><tr><td><a href="https://casper-network.github.io/assets/files/info_get_validator_changes-b00769a67f985205e32738814b022f40.json/" target="_blank">info_get_validator_changes</a></td><td><a href="https://casper-network.github.io/assets/files/info_get_validator_changes-639573f3e80bb83ae895b0a1c20ee08b.json/" target="_blank">info_get_validator_changes</a></td><td>Unchanged</td></tr><tr><td><a href="https://casper-network.github.io/assets/files/query_balance-6b90fa90d12eee598b13ee2175cee818.json/" target="_blank">query_balance</a></td><td><a href="https://casper-network.github.io/assets/files/query_balance-75336a68fcc25c129f91052374122c2f.json/" target="_blank">query_balance</a></td><td>Unchanged</td></tr><tr><td></td><td><a href="https://casper-network.github.io/assets/files/query_balance_details-a9deb8d8e6bd4c6cb90f1f2ae794f041.json/" target="_blank">query_balance_details</a></td><td>Added</td></tr><tr><td><a href="https://casper-network.github.io/assets/files/query_global_state-31b6d9cd39f57fb5d32de59303281d5a.json/" target="_blank">query_global_state</a></td><td><a href="https://casper-network.github.io/assets/files/query_global_state-265854023f6ba7c399d2c53d7013ae8d.json/" target="_blank">query_global_state</a></td><td>Unchanged</td></tr><tr><td><a href="https://casper-network.github.io/assets/files/state_get_account_info-42a61e384f11c6751479673265b3857e.json/" target="_blank">state_get_account_info</a></td><td><a href="https://casper-network.github.io/assets/files/state_get_account_info-d1c72520af04c4febf5d288bc9e4543a.json/" target="_blank">state_get_account_info</a></td><td>Unchanged</td></tr><tr><td><a href="https://casper-network.github.io/assets/files/state_get_auction_info-194e6b4be0348ba69b976fa0340cd8b0.json/" target="_blank">state_get_auction_info</a></td><td><a href="https://casper-network.github.io/assets/files/state_get_auction_info-c6d1d64be6cd6fc279b4626243972c86.json/" target="_blank">state_get_auction_info</a></td><td>Unchanged</td></tr><tr><td><a href="https://casper-network.github.io/assets/files/state_get_balance-89969de7e576fcd381c16bc9b525c6ad.json/" target="_blank">state_get_balance</a></td><td><a href="https://casper-network.github.io/assets/files/state_get_balance-5178b5ec834d879eb5086c0bd2a63def.json/" target="_blank">state_get_balance</a></td><td><a href="https://casper-network.github.io/blog/condor-jsonrpc/_024-jsonrpc-comp/state_get_balance.md/">Balance now reflects all active holds</a></td></tr><tr><td><a href="https://casper-network.github.io/assets/files/state_get_dictionary_item-0a5483879aaa2ff7115b7b6301e64753.json/" target="_blank">state_get_dictionary_item</a></td><td><a href="https://casper-network.github.io/assets/files/state_get_dictionary_item-a7acfd63494851cd67797ac5bf215462.json/" target="_blank">state_get_dictionary_item</a></td><td>Unchanged</td></tr><tr><td><a href="https://casper-network.github.io/assets/files/state_get_item-22eec97e9fd3809278121d4c349f15ed.json/" target="_blank">state_get_item</a></td><td><a href="https://casper-network.github.io/assets/files/state_get_entity-e99cad9ae85a8a5c52334a96f68d7c31.json/" target="_blank">state_get_entity</a></td><td>Renamed</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="https://casper-network.github.io/blog/condor-jsonrpc/#summary" class="hash-link" aria-label="Direct link to Summary" title="Direct link to Summary">​</a></h2>
+<p>The major changes in the JSON-RPC between v1.5.6 and v2.0.0 are:</p>
+<ul>
+<li>The <a href="https://github.com/casper-network/casper-sidecar" target="_blank" rel="noopener noreferrer">casper-sidecar</a> is now responsible for serving the JSON-RPC API.</li>
+<li>The sidecar may also expose the Server Side Events API, this is of some relevance to developers relying upon the Casper Event Standard (CES).</li>
+<li>Deploys are now called Transactions as per the industry norm.  There are differences in the representation of these data structures.</li>
+</ul>]]></content>
+        <author>
+            <name>Mel Padden</name>
+            <uri>https://github.com/melpadden</uri>
+        </author>
+        <category label="Condor" term="Condor"/>
+        <category label="JSON RPC" term="JSON RPC"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Zug consensus in Casper 2.0]]></title>
+        <id>https://casper-network.github.io/blog/condor-zug/</id>
+        <link href="https://casper-network.github.io/blog/condor-zug/"/>
+        <updated>2024-10-03T18:00:00.000Z</updated>
+        <summary type="html"><![CDATA[A discussion of the Zug consensus model]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-zug-consensus-mechanism">The Zug consensus mechanism<a href="https://casper-network.github.io/blog/condor-zug/#the-zug-consensus-mechanism" class="hash-link" aria-label="Direct link to The Zug consensus mechanism" title="Direct link to The Zug consensus mechanism">​</a></h2>
+<p>In this article we will break down the Zug consensus mechanism in Casper v2.0</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="highway">Highway<a href="https://casper-network.github.io/blog/condor-zug/#highway" class="hash-link" aria-label="Direct link to Highway" title="Direct link to Highway">​</a></h2>
+<p>The Highway consensus protocol, developed by CasperLabs, was the first in-house consensus protocol that was deployed with the launch of 1.0 mainnet.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="concept">Concept<a href="https://casper-network.github.io/blog/condor-zug/#concept" class="hash-link" aria-label="Direct link to Concept" title="Direct link to Concept">​</a></h3>
+<p>Highway's distinctive feature is the ability to explicitly vary the "speed" of different validators by dynamically altering a parameter that governs which and how many rounds they participate in within an era.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="limitations-with-highway">Limitations with Highway<a href="https://casper-network.github.io/blog/condor-zug/#limitations-with-highway" class="hash-link" aria-label="Direct link to Limitations with Highway" title="Direct link to Limitations with Highway">​</a></h3>
+<p>Highway is highly complex and opaque. It is difficult to develop a good intuition for how the internal state of the protocol evolves. Additionally, the ability to vary validators "speed" was likely of limited benefit, since, in practice, the maximum "speed" (i.e., block time) was set conservatively.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="zug">Zug<a href="https://casper-network.github.io/blog/condor-zug/#zug" class="hash-link" aria-label="Direct link to Zug" title="Direct link to Zug">​</a></h2>
+<p>Due to limitations of Highway, a simpler protocol, called Zug, was developed. Its internal state is much simpler, allowing the same number of validators to quickly reach consensus with fewer messages.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="how-zug-works">How Zug works<a href="https://casper-network.github.io/blog/condor-zug/#how-zug-works" class="hash-link" aria-label="Direct link to How Zug works" title="Direct link to How Zug works">​</a></h3>
+<p>The Zug protocol can be summarized as follows:</p>
+<ul>
+<li>In every round, the round leader proposes a new block, <code>B</code>.</li>
+<li>Every validator creates and broadcasts an <em>echo</em> message, with a signature of <code>B</code>.</li>
+<li>When a suitable block <code>B</code> has received echoes from 67% of the validators:
+<ul>
+<li>The next round begins. The next leader can propose a child of <code>B</code>.</li>
+<li>Every validator signs and broadcasts a <em>vote</em> message, voting <code>yes</code>.</li>
+</ul>
+</li>
+<li>If this does not happen before a timeout, the validators vote <code>no</code> instead.
+<ul>
+<li>If there are <code>no</code> votes from 67%, the next round begins, too.
+The next leader can propose a child from an earlier block and skip this round.</li>
+</ul>
+</li>
+<li>If there are <code>yes</code> votes from 67%, <code>B</code> is finalized and gets executed, together with all its ancestors. (Usually, the next round has already started at this point.)</li>
+</ul>
+<p>Notice that proposals, votes, and echoes are broadcast, so if one correct node receives a message, all nodes will eventually receive it. An honest validator sends only one echo or vote per round. So, unless 34% of validators double-sign, at most one block per round gets 67% echoes, and no finalized block can ever be skipped, ensuring safety. As long as there are 67% of echoes for a proposal, the next round begins and Zug doesn't get stuck. If there are not, everyone votes <code>no</code>, and the next round also begins.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="impact-on-validator-set-size">Impact on validator set size<a href="https://casper-network.github.io/blog/condor-zug/#impact-on-validator-set-size" class="hash-link" aria-label="Direct link to Impact on validator set size" title="Direct link to Impact on validator set size">​</a></h2>
+<p>Because Zug has a smaller communication overhead, it may allow an increase in the size of the validator set.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="https://casper-network.github.io/blog/condor-zug/#summary" class="hash-link" aria-label="Direct link to Summary" title="Direct link to Summary">​</a></h3>
+<p>The adoption of the Zug protocol represents a leap for ward for the Casper network in terms of efficiency and extensibility.</p>]]></content>
+        <author>
+            <name>Alexander Limonov</name>
+            <uri>https://github.com/AlexanderLimonov</uri>
+        </author>
+        <category label="Condor" term="Condor"/>
+        <category label="Consensus" term="Consensus"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Transactions in Casper 2.0]]></title>
+        <id>https://casper-network.github.io/blog/condor-transaction/</id>
+        <link href="https://casper-network.github.io/blog/condor-transaction/"/>
+        <updated>2024-10-03T18:00:00.000Z</updated>
+        <summary type="html"><![CDATA[A discussion of the new Transaction data type]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="transactions-in-casper-v20">Transactions in Casper v2.0<a href="https://casper-network.github.io/blog/condor-transaction/#transactions-in-casper-v20" class="hash-link" aria-label="Direct link to Transactions in Casper v2.0" title="Direct link to Transactions in Casper v2.0">​</a></h2>
+<p>In this article we will examine user transactions (previously called deploys).  More specifically we will review the expanded set of transaction types and how they are processed by the node's execution engine.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="transaction-types">Transaction Types<a href="https://casper-network.github.io/blog/condor-transaction/#transaction-types" class="hash-link" aria-label="Direct link to Transaction Types" title="Direct link to Transaction Types">​</a></h2>
+<p>Transactions encapsulate user intents.  For example, if Alice intends to transfer CSPR to Bob, she uses software (e.g. a wallet) to construct and sign a transaction that is subsequently dispatched to a trusted node for processing by the network.</p>
+<p>Transactions may be either 'native' or 'custom':</p>
+<ul>
+<li>
+<p>Native transactions are those that interact with system contracts such as mint and/or auction.  They do not require any WASM payload to be constructed,  are normally compact in size, and are processed directly on the metal, i.e. host-side.</p>
+</li>
+<li>
+<p>Custom transactions are those that interact with the system via either on-chain smart contracts or in-line session logic.  All such interactions are based upon user-defined WASM binaries, and are executed within one of the node's supported virtual machines.</p>
+</li>
+</ul>
+<p>In Casper 1.0 there was a single native transaction type (Transfer), and a set of custom transaction types (ContractByHash, ContractByHashVersioned, ContractByName, ContractByNameVersioned, ContractBytes). In Casper 2.0 the set of both native &amp; custome transaction types have been expanded.</p>
+<p>Casper 2.0 Native Transaction Types:</p>
+<ul>
+<li>System.Mint.Transfer</li>
+<li>System.Mint.Burn</li>
+<li>System.Auction.Bid.Submit</li>
+<li>System.Auction.Bid.Withdraw</li>
+<li>System.Auction.Delegation.Redelegate</li>
+<li>System.Auction.Delegation.Submit</li>
+<li>System.Auction.Delegation.Withdraw</li>
+<li>System.Auction.Staking.Submit</li>
+<li>System.Auction.Staking.Withdraw</li>
+</ul>
+<p>Not all work is identical, e.g. a base token (cspr) transfer differs from a smart contract execution.</p>
+<p>Casper 1.0 supported a set of 6 transaction types, in Casper 2.0 the set is both refined and expanded.</p>
+<p>The Transaction stat type has a number of changes from its predecessor, the Deploy. For a detailed discussion of these differences you can see the casper documentation of this discussion of the JSON schema.</p>]]></content>
+        <author>
+            <name>Mark Greenslade</name>
+            <uri>https://github.com/asladeofgreen</uri>
+        </author>
+        <category label="Condor" term="Condor"/>
+        <category label="smartcontracts" term="smartcontracts"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[validator rewards in Casper 2.0]]></title>
         <id>https://casper-network.github.io/blog/condor-validator-rewards/</id>
@@ -438,6 +675,6 @@ Existing host functions used to identify the caller within your contract will co
             <uri>https://github.com/sczembor</uri>
         </author>
         <category label="Condor" term="Condor"/>
-        <category label="Set-up" term="Set-up"/>
+        <category label="Setup" term="Setup"/>
     </entry>
 </feed>
