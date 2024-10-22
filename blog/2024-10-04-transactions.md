@@ -24,7 +24,7 @@ Transactions may be either 'native' or 'custom':
 
 - Custom transactions are those that interact with the system via either on-chain smart contracts or in-line session logic.  All such interactions are based upon user-defined WASM binaries, and are executed within one of the node's supported virtual machines.
 
-In Casper 1.0 there was a single native transaction type (Transfer), and a set of custom transaction types (ContractByHash, ContractByHashVersioned, ContractByName, ContractByNameVersioned, ContractBytes). In Casper 2.0 the set of both native & custome transaction types have been expanded.
+In Casper 1.0 there was a single native transaction type (Transfer), and a set of custom transaction types (ContractByHash, ContractByHashVersioned, ContractByName, ContractByNameVersioned, ContractBytes). In Casper 2.0 the set of both native & custom transaction types have been expanded.
 
 Casper 2.0 Native Transaction Types:
 
