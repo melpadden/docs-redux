@@ -61,35 +61,36 @@ const config = {
           showLastUpdateAuthor: true,
           lastVersion: '2.0.0',
         },
-        blog: {
-          path: "./blog",
-          routeBasePath: "blog",
-          blogTitle: "Casper Developer Relations Blog",
-          blogDescription:
-            "A blog about all things to do with developing on the Casper Blockchain",
-          postsPerPage: "ALL",
-          blogSidebarTitle: "All posts",
-          blogSidebarCount: "ALL",
-          showReadingTime: true, // When set to false, the "x min read" won't be shown
-          readingTime: ({content, frontMatter, defaultReadingTime}) =>
-            defaultReadingTime({content, options: {wordsPerMinute: 300}}),
-        },
-        // pages: {
-        //   path: 'src/pages',
-        //   routeBasePath: '',
-        //   include: ['**/*.{js,jsx,ts,tsx,md,mdx}'],
-        //   exclude: [
-        //     '**/_*.{js,jsx,ts,tsx,md,mdx}',
-        //     '**/_*/**',
-        //     '**/*.test.{js,jsx,ts,tsx}',
-        //     '**/__tests__/**',
-        //   ],
-        //   mdxPageComponent: '@theme/MDXPage',
-        //   remarkPlugins: [require('./my-remark-plugin')],
-        //   rehypePlugins: [],
-        //   beforeDefaultRemarkPlugins: [],
-        //   beforeDefaultRehypePlugins: [],
+        // blog: {
+        //   path: "./blog",
+        //   include: ['**/*.{md,mdx}'],
+        //   routeBasePath: "blog",
+        //   blogTitle: "Casper Developer Relations Blog",
+        //   blogDescription:
+        //     "A blog about all things to do with developing on the Casper Blockchain",
+        //   postsPerPage: "ALL",
+        //   blogSidebarTitle: "All posts",
+        //   blogSidebarCount: "ALL",
+        //   showReadingTime: true, // When set to false, the "x min read" won't be shown
+        //   readingTime: ({content, frontMatter, defaultReadingTime}) =>
+        //     defaultReadingTime({content, options: {wordsPerMinute: 300}}),
         // },
+        pages: {
+          path: './src/pages',
+          routeBasePath: 'pages',
+          include: ['**/*.{js,jsx,ts,tsx,md,mdx}'],
+          // exclude: [
+          //   '**/_*.{js,jsx,ts,tsx,md,mdx}',
+          //   '**/_*/**',
+          //   '**/*.test.{js,jsx,ts,tsx}',
+          //   '**/__tests__/**',
+          // ],
+          mdxPageComponent: '@theme/MDXPage',
+          // remarkPlugins: [require('./my-remark-plugin')],
+          rehypePlugins: [],
+          beforeDefaultRemarkPlugins: [],
+          beforeDefaultRehypePlugins: [],
+        },
       }),
     ],
   ],

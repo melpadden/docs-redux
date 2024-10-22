@@ -48,15 +48,15 @@ module.exports = {
             position: "left",
         },
         {
-            to: 'blog/tags/condor', 
+            to: 'pages/condor/', 
             label: 'Condor Articles', 
             position: 'right' 
         },
-        { 
-            to: 'blog', 
-            label: 'Blog Articles', 
-            position: 'right' 
-        },
+        // { 
+        //     to: 'blog', 
+        //     label: 'Blog Articles', 
+        //     position: 'right' 
+        // },
         {
             type: "search",
             position: "right",
