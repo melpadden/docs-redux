@@ -12,9 +12,18 @@ Follow these steps to run the documentation website locally, displayed in your l
     npm install --global yarn
     ```
 
+### Building the website
+The website requires node v21.0 at time of writing. There is a change in the way that Node handles ES Modules in v23.0, which breaks the build. This situation could be remedies by refactoring away from use of ES modules with "require" statements.
+
+To install dependencies and build the website in production mode:
+-  yarn install
+-  yarn build
+
+This will generate the static website in the ./build directory. To serve this website type `yarn serve`. 
+
 ### Running the website locally
 
-1. Create a fork of the documentation repository in GitHub: https://github.com/casper-network/docs/.
+1. Create a fork of the documentation repository in GitHub: https://github.com/casper-network/docs-redux/.
 2. Clone the fork on your machine.
 
     ```
@@ -35,4 +44,4 @@ Follow these steps to run the documentation website locally, displayed in your l
 
 5. Access http://localhost:3000/ in your browser.
 
-The following section details how to [update the content](#updating-existing-content).
+
