@@ -1,5 +1,4 @@
-const cfgPath = process.env.NODE_ENV ? `./env/.${process.env.NODE_ENV}.env` : `.env`;
-console.debug(`process.env.NODE_ENV: ${process.env.NODE_ENV}`);
+const cfgPath = ".env"; // #process.env.NODE_ENV ? `./env/.${process.env.NODE_ENV}.env` : `.env`;
 console.debug(`cfgPath: ${cfgPath}`);
 require("dotenv").config({ path: cfgPath });
 
