@@ -111,7 +111,7 @@ The effective amount of the hold is reduced linearly over the course of the hold
 ### Virtual Machine 2.0
 
 In Casper 2.0, we are introducing a change to the execution engine which allows transactors to specify which of many possible VMs they wish to target with their transaction. The current Casper VM will remain, and for the initial 2.0 release the new VM will not be enabled. We expect to enable VM 2.0 in a subsequent release cycle.  
-‍
+
 Among the improvements in VM 2.0 are: 
 
 - Removal of URefs. URefs are complicated, hard to track, and ultimately unnecessary for most contracts.
@@ -119,22 +119,18 @@ Among the improvements in VM 2.0 are:
 - Backwards compatibility: VM2.0 contracts can call VM 1.X contracts, allowing the two systems to coexist during the transition period. 
 - Transferable entry points, which allow sending tokens directly to contract entry points without needing a custom session code.
 - VM2.0 code will all be valid Rust code, which allows it to execute without a complex system of test infrastructure and improves testability.
-- Imeplemntation of some features which are familiar from other chains such as the `payable` keyword
+- Implementation of some features which are familiar from other chains such as the `payable` keyword
 - Schema generation from smart contracts, paving the way for improvements in tooling, discoverability and maintainability.
 - Improved Smart Contract upgrade process.
 
 ### FFI Enhancements
 Casper 2.0 FFI introduces access to some additional hashing algorithms, as well as providing access to information about the block info, including hash and parent block hash. 
 
-### Userland CSPR Burning
-In Casper 2.0 user contracts can burn CSPR token. This represents a significant change to the tokenomics of Casper 1.X
+### CSPR Burn function
+In Casper 2.0 users can burn CSPR token. This function is exposed as a `burn` function in the mint contract.  
+
+This can be done through  This represents a significant change to the tokenomics of Casper 1.X
 >TODO: More details on this (talk to Ed)
-
----
-
-## Bug Fixes
-
-Here you can find a [list](./bug-fixes.md) of the bug fixes included in Casper v2.0.
 
 ---
 
@@ -175,15 +171,6 @@ Thank you,
 **Casper Development Team**
 
 ---
-
-
-### Exhaustive list of PRs in this release:
-
-Click [here for a list](./all-prs.md) of all the PRs contained in this release.
-
-
-
-
 
 ## References/Further Reading
 

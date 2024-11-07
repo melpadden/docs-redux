@@ -3,8 +3,7 @@
 // (when paired with `@ts-check`).
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
-import { envConfig } from "./env.config.js";
-/** @type {import('@docusaurus/types').Config} */
+import {envConfig} from "./env.config.js";
 import {themeNavbarConfig, themeFooterConfig, themeAlgoliaConfig, announcementBarConfig} from "./config";
 import {themes as prismThemes} from "prism-react-renderer";
 
@@ -107,7 +106,14 @@ const config = {
                 theme: prismThemes.github,
                 darkTheme: prismThemes.dracula,
             },
-            announcementBar: announcementBarConfig,
+            //announcementBar: announcementBarConfig,
+            sitemap: {
+                lastmod: 'datetime',
+                changefreq: 'hourly',
+                priority: 0.5,
+                ignorePatterns: ['/tags/**'],
+                filename: 'sitemap.xml',
+            },
         }),
     plugins: [
         // [
@@ -124,4 +130,5 @@ const config = {
         // ]
     ],
 };
+console.log(config);
 export default config;
