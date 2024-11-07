@@ -1,4 +1,4 @@
-name: Staging deployment
+name: Deployment to Staging
 on:
   workflow_dispatch:
     # Review gh actions docs if you want to further define triggers, paths, etc
@@ -19,10 +19,10 @@ jobs:
           
       - name: Template credentials - staging
         if: github.ref == 'refs/heads/dev'
-        uses: cuchi/jinja2-action@1149b92d9ea6db61d7f71c22e3d5028d8065f140
+        uses: cuchi/jinja2-action@v1.2.2
         with:
           template: .github/templates/.env.staging.j2
-          output_file: ./env/algolia.env
+          output_file: env/algolia.env
         env:
           ALGOLIA_APP_ID: ${{ vars.ALGOLIA_APP_ID }}
           ALGOLIA_INDEX_NAME: ${{ vars.ALGOLIA_INDEX_NAME }}
