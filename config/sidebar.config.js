@@ -1,4 +1,6 @@
 module.exports = {
+    home: ["index", "disclaimer"],
+
     concepts: [
         "concepts/index",
         "concepts/about",

@@ -1,9 +1,11 @@
-const themeNavbarConfig = require("./theme.navbar.config");
-const themeFooterConfig = require("./theme.footer.config");
-const themeAlgoliaConfig = require("./theme.algolia.config");
+import themeNavbarConfig from "./theme.navbar.config";
+import themeFooterConfig from "./theme.footer.config";
+import themeAlgoliaConfig from "./theme.algolia.config";
+import announcementBarConfig from "./announcementBar.config";
 
 module.exports = {
     themeNavbarConfig,
     themeFooterConfig,
-    themeAlgoliaConfig
+    themeAlgoliaConfig,
+    announcementBarConfig
 };

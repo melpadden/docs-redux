@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable @typescript-eslint/no-var-requires */
-const fs = require("fs");
-const path = require("path");
+import {fs} from "fs";
+import {path} from "path";
 
 const getDirPath = (dir = "") => {
     // eslint-disable-next-line no-undef

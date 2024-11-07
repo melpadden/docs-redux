@@ -1,11 +1,11 @@
 //----------------------------------
 //  Imports
 //----------------------------------
-const puppeteer = require("puppeteer");
-const core = require("@actions/core");
-const style = require("ansi-styles");
-const glob = require("glob");
-const fs = require("fs");
+import puppeteer from "puppeteer";
+import core from "@actions/core";
+import style from "ansi-styles";
+import glob from "glob";
+import fs from "fs";
 
 //----------------------------------
 // Constants
@@ -59,7 +59,7 @@ class MarkdownExternalUrlChecker {
 
         const responseCache = {};
         for (let f = 0, flen = files.length; f < flen; f++) {
-            const { urls } = files[f];
+            const {urls} = files[f];
 
             for (let u = 0, ulen = urls.length; u < ulen; u++) {
                 const url = urls[u];
@@ -67,7 +67,7 @@ class MarkdownExternalUrlChecker {
                     responseCache[url] = await this.evaluateUrl(url);
                     await this.sleep(SITE_REQUEST_INTERVAL);
                 }
-                files[f].urls[u] = { url, response: responseCache[url] };
+                files[f].urls[u] = {url, response: responseCache[url]};
                 urlInc += 1;
                 const percentage = Math.round((urlInc / numUrls) * 100);
                 console.log(`Progress: ${percentage}% (${urlInc}/${numUrls})`);
@@ -89,36 +89,36 @@ class MarkdownExternalUrlChecker {
                     const resp = await this.evaluateUrl(headers.location, status);
                     resolve(resp);
                 } else if (originStatus) {
-                    resolve({ status: originStatus, redirectionStatus: response.status(), redirection: response.url() });
+                    resolve({status: originStatus, redirectionStatus: response.status(), redirection: response.url()});
                 } else {
-                    resolve({ status: response.status() });
+                    resolve({status: response.status()});
                 }
             });
             page.once("pageerror", async (err) => {
-                resolve({ error: err.message });
+                resolve({error: err.message});
             });
 
             try {
-                await page.goto(url, { waitUntil: "load" });
+                await page.goto(url, {waitUntil: "load"});
             } catch (err) {
-                resolve({ error: err.message });
+                resolve({error: err.message});
                 return;
             }
             await page.close();
-            resolve({ error: "Unknown exception occured" });
+            resolve({error: "Unknown exception occured"});
         });
     }
 
     static retrieveAllUrls(path) {
         const urls = [];
-        const md = fs.readFileSync(path, { encoding: "utf-8" });
+        const md = fs.readFileSync(path, {encoding: "utf-8"});
         const matches = md.match(/\[(.+)]\((http[^ ]+?)( "(.+)")?\)/gm);
         if (matches) {
             matches.forEach((url) => {
                 urls.push(url.replace(/\[.*]\(|\)/gm, ""));
             });
         }
-        return urls.length > 0 ? { path, urls } : null;
+        return urls.length > 0 ? {path, urls} : null;
     }
 
     //----------------------------------
@@ -192,54 +192,54 @@ class MarkdownExternalUrlChecker {
                 if (hasError) {
                     core.startGroup(
                         style.bold.open +
-                            style.red.open +
-                            "━ FAIL ━ " +
-                            style.red.close +
-                            style.bold.close +
-                            style.bgRed.open +
-                            style.black.open +
-                            file.path +
-                            style.black.close +
-                            style.bgRed.close,
+                        style.red.open +
+                        "━ FAIL ━ " +
+                        style.red.close +
+                        style.bold.close +
+                        style.bgRed.open +
+                        style.black.open +
+                        file.path +
+                        style.black.close +
+                        style.bgRed.close,
                     );
                 } else if (hasWarning) {
                     core.startGroup(
                         style.bold.open +
-                            style.yellow.open +
-                            "━ WARN ━ " +
-                            style.yellow.close +
-                            style.bold.close +
-                            style.bgYellow.open +
-                            style.black.open +
-                            file.path +
-                            style.black.close +
-                            style.bgYellow.close,
+                        style.yellow.open +
+                        "━ WARN ━ " +
+                        style.yellow.close +
+                        style.bold.close +
+                        style.bgYellow.open +
+                        style.black.open +
+                        file.path +
+                        style.black.close +
+                        style.bgYellow.close,
                     );
                 } else if (hasInfo) {
                     core.startGroup(
                         style.bold.open +
-                            style.cyan.open +
-                            "━ INFO ━ " +
-                            style.cyan.close +
-                            style.bold.close +
-                            style.bgCyan.open +
-                            style.black.open +
-                            file.path +
-                            style.black.close +
-                            style.bgCyan.close,
+                        style.cyan.open +
+                        "━ INFO ━ " +
+                        style.cyan.close +
+                        style.bold.close +
+                        style.bgCyan.open +
+                        style.black.open +
+                        file.path +
+                        style.black.close +
+                        style.bgCyan.close,
                     );
                 } else {
                     core.startGroup(
                         style.bold.open +
-                            style.white.open +
-                            "━ PASS ━ " +
-                            style.white.close +
-                            style.bold.close +
-                            style.bgWhite.open +
-                            style.black.open +
-                            file.path +
-                            style.black.close +
-                            style.bgWhite.close,
+                        style.white.open +
+                        "━ PASS ━ " +
+                        style.white.close +
+                        style.bold.close +
+                        style.bgWhite.open +
+                        style.black.open +
+                        file.path +
+                        style.black.close +
+                        style.bgWhite.close,
                     );
                 }
 

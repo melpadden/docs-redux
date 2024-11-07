@@ -3,16 +3,9 @@
 // (when paired with `@ts-check`).
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
-const globalConfig = require("./global.config.js");
-const announcementBarConfig = require("./config/announcementBar.config.js");
-const githubPagesConfig = require("./config/github-pages.config.js");
-
-const {
-    themeNavbarConfig,
-    themeFooterConfig,
-    themeAlgoliaConfig,
-} = require("./config");
-
+import { envConfig } from "./env.config.js";
+/** @type {import('@docusaurus/types').Config} */
+import {themeNavbarConfig, themeFooterConfig, themeAlgoliaConfig, announcementBarConfig} from "./config";
 import {themes as prismThemes} from "prism-react-renderer";
 
 /** @type {import('@docusaurus/types').Config} */
@@ -20,9 +13,13 @@ const config = {
     title: "Casper Docs - Redux",
     tagline: "Casper Documentation",
     favicon: "icon/favicon.ico",
-    url: globalConfig.siteUrl,
-    baseUrl: globalConfig.baseUrl,
-    ...githubPagesConfig,
+    url: envConfig.siteUrl,
+    baseUrl: envConfig.baseUrl,
+    // GH Pages deployment config.
+    organizationName: envConfig.githubOrganizationName,
+    projectName: envConfig.githubProjectName,
+    deploymentBranch: envConfig.githubDeploymentBranch,
+
     trailingSlash: true,
     onBrokenLinks: "warn",
     onBrokenMarkdownLinks: "warn",
@@ -49,9 +46,9 @@ const config = {
                     path: "./docs",
                     sidebarPath: "./config/sidebar.config.js",
                     //sidebarPath: './sidebars.auto.js',
-                    routeBasePath: !globalConfig.routePrefix
+                    routeBasePath: !envConfig.routePrefix
                         ? "/"
-                        : globalConfig.routePrefix, // IMPORTANT: Turn on docs-only mode
+                        : envConfig.routePrefix, // IMPORTANT: Turn on docs-only mode
                     exclude: [
                         // "./contract-dsl/archived",
                         // "./economics/archived",
@@ -113,19 +110,18 @@ const config = {
             announcementBar: announcementBarConfig,
         }),
     plugins: [
-        [
-            'docusaurus-plugin-dotenv',
-            {
-                path: ".env", // The path to your environment variables.
-                safe: false, // If false ignore safe-mode, if true load './.env.example', if a string load that file as the sample
-                systemvars: false, // Set to true if you would rather load all system variables as well (useful for CI purposes)
-                silent: false, //  If true, all warnings will be suppressed
-                expand: false, // Allows your variables to be "expanded" for reusability within your .env file
-                defaults: false, //  Adds support for dotenv-defaults. If set to true, uses ./.env.defaults
-                ignoreStub: true
-            }
-        ]
+        // [
+        //     'docusaurus-plugin-dotenv',
+        //     {
+        //         path: ".env", // The path to your environment variables.
+        //         safe: false, // If false ignore safe-mode, if true load './.env.example', if a string load that file as the sample
+        //         systemvars: false, // Set to true if you would rather load all system variables as well (useful for CI purposes)
+        //         silent: false, //  If true, all warnings will be suppressed
+        //         expand: false, // Allows your variables to be "expanded" for reusability within your .env file
+        //         defaults: false, //  Adds support for dotenv-defaults. If set to true, uses ./.env.defaults
+        //         ignoreStub: true
+        //     }
+        // ]
     ],
 };
-
 export default config;

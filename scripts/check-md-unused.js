@@ -1,10 +1,6 @@
-//----------------------------------
-//  Imports
-//----------------------------------
-const glob = require("glob");
-const path = require("path");
-const style = require("ansi-styles");
-const fs = require("fs");
+import style from "ansi-styles";
+import glob from "glob";
+import fs from "fs";
 
 //----------------------------------
 // Constants
@@ -47,7 +43,7 @@ class UnusedMarkdownChecker {
                 this.updateOccurrences(filepath, urls);
             }
         });
-        const sidebarMapping = require("../config/sidebar.config");
+        import sidebarMapping from "../config/sidebar.config";
         const keys = Object.keys(sidebarMapping);
         const sidebarUrls = [];
         keys.forEach((key) => {
@@ -117,7 +113,7 @@ class UnusedMarkdownChecker {
 
     static retrieveInternalUrls(path) {
         const urls = [];
-        const md = fs.readFileSync(path, { encoding: "utf-8" });
+        const md = fs.readFileSync(path, {encoding: "utf-8"});
         const urlMatches = md.match(/\[(.+)]\(((?!https?|mailto)[^ ]+?)( "(.+)")?\)/gm);
         if (urlMatches) {
             urlMatches.forEach((url) => {
@@ -131,7 +127,7 @@ class UnusedMarkdownChecker {
     }
 
     static retrieveInternalMapping(path) {
-        const md = fs.readFileSync(path, { encoding: "utf-8" });
+        const md = fs.readFileSync(path, {encoding: "utf-8"});
         const slugMatches = /^slug:\s+(?<slug>.+)$/gm.exec(md);
         const slug = ((slugMatches || {}).groups || {}).slug;
         if (slug && slug !== "/") {

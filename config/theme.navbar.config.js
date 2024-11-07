@@ -1,8 +1,3 @@
-const globalConfig = require("../global.config");
-let routePrefix = globalConfig.routePrefix;
-// const baseUrl = globalConfig.baseUrl;
-// if (baseUrl && baseUrl !== "/") { routePrefix = `${baseUrl}/${routePrefix}`; }
-console.log(`routePrefix: ${routePrefix}`);
 module.exports = {
     title: "",
     logo: {
@@ -11,6 +6,12 @@ module.exports = {
         srcDark: "/icon/Casper_Wordmark_Red_RGB.png",
     },
     items: [
+        // {
+        //     type: "docSidebar",
+        //     sidebarId: "home",
+        //     label: "Home",
+        //     position: "left",
+        // },
         {
             type: "docSidebar",
             sidebarId: "concepts",
