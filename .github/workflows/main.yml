@@ -1,10 +1,8 @@
-name: Test deployment
-
+name: Staging deployment
 on:
   workflow_dispatch:
     # Review gh actions docs if you want to further define triggers, paths, etc
     # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
-
 jobs:
   build-staging:
     name: Build Staging
