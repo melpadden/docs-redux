@@ -1,6 +1,7 @@
 const cfgPath = ".env"; // #process.env.NODE_ENV ? `./env/.${process.env.NODE_ENV}.env` : `.env`;
 console.debug(`cfgPath: ${cfgPath}`);
-require("dotenv").config({ path: cfgPath });
+import dotenv from 'dotenv';
+dotenv.config({ path: cfgPath });
 
 const docsOnlyMode = process.env.DOCS_MODE == "true";
 const routePrefix = process.env.ROUTE_PREFIX;

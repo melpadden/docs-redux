@@ -116,7 +116,7 @@ const config = {
         [
             'docusaurus-plugin-dotenv',
             {
-                path: "./env/.staging.env", // The path to your environment variables.
+                path: ".env", // The path to your environment variables.
                 safe: false, // If false ignore safe-mode, if true load './.env.example', if a string load that file as the sample
                 systemvars: false, // Set to true if you would rather load all system variables as well (useful for CI purposes)
                 silent: false, //  If true, all warnings will be suppressed
