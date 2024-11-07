@@ -17,12 +17,12 @@ jobs:
           node-version: 23
           cache: yarn
           
-      - name: Template credentials - staging
+      - name: Generate Algolia vars - staging
         if: github.ref == 'refs/heads/dev'
         uses: cuchi/jinja2-action@v1.2.2
         with:
           template: .github/templates/.env.staging.j2
-          output_file: env/algolia.env
+          output_file: algolia.env
         env:
           ALGOLIA_APP_ID: ${{ vars.ALGOLIA_APP_ID }}
           ALGOLIA_INDEX_NAME: ${{ vars.ALGOLIA_INDEX_NAME }}
