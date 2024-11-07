@@ -44,6 +44,7 @@ const config = {
                 docs: {
                     path: "./docs",
                     sidebarPath: "./config/sidebar.config.js",
+                    //routeBasePath: "docs",
                     //sidebarPath: './sidebars.auto.js',
                     routeBasePath: !envConfig.routePrefix
                         ? "/"
@@ -55,7 +56,7 @@ const config = {
                     ],
                     showLastUpdateTime: true,
                     showLastUpdateAuthor: true,
-                    lastVersion: '2.0.0',
+                    // lastVersion: '2.0.0',
                 },
                 // blog: {
                 //   path: "./blog",
@@ -90,7 +91,6 @@ const config = {
             }),
         ],
     ],
-
     themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
         ({
@@ -116,6 +116,16 @@ const config = {
             },
         }),
     plugins: [
+        [
+            '@docusaurus/plugin-content-docs',
+            {
+                id: 'condor',
+                path: './condor',
+                routeBasePath: '/condor',
+                sidebarPath: './condor/condor.sidebar.js',
+                // ... other options
+            },
+        ],
         // [
         //     'docusaurus-plugin-dotenv',
         //     {

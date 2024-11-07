@@ -1,7 +1,7 @@
 ---
 title: Condor Release Notes
 description: Introduction to the Condor Release Notes
-slug: condor-index
+slug: /
 date: 2024-07-16T22:00
 authors: [ melpadden ]
 tags: [condor]

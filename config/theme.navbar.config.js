@@ -12,6 +12,7 @@ module.exports = {
         //     label: "Home",
         //     position: "left",
         // },
+
         {
             type: "docSidebar",
             sidebarId: "concepts",
@@ -48,10 +49,17 @@ module.exports = {
             label: "Tutorials",
             position: "left",
         },
+        // {
+        //     to: 'pages/condor/',
+        //     label: 'Condor Articles',
+        //     position: 'right'
+        // },
         {
-            to: 'pages/condor/', 
-            label: 'Condor Articles', 
-            position: 'right' 
+            type: "docSidebar",
+            sidebarId: "condorSidebar",
+            docsPluginId: 'condor',
+            label: "Condor Articles",
+            position: "right",
         },
         // { 
         //     to: 'blog', 

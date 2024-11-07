@@ -1,6 +1,8 @@
 {
-  "home": ["index", "disclaimer"],
-
+  "home": [
+    "index",
+    "disclaimer"
+  ],
   "concepts": [
     "concepts/index",
     "concepts/about",
@@ -109,6 +111,7 @@
     "concepts/addressable-entity",
     "concepts/accounts-and-keys",
     "concepts/key-types",
+    "concepts/transactions",
     "concepts/transactions-and-transaction-lifecycle",
     "concepts/global-state",
     "concepts/smart-contracts",
