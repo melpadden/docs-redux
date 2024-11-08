@@ -19,7 +19,7 @@ const config = {
     projectName: envConfig.githubProjectName,
     deploymentBranch: envConfig.githubDeploymentBranch,
 
-    trailingSlash: true,
+    trailingSlash: false,
     onBrokenLinks: "warn",
     onBrokenMarkdownLinks: "warn",
     onDuplicateRoutes: "throw",
