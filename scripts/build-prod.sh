@@ -1,7 +1,7 @@
 #!/bin/bash
 yarn clear
-cp ./env/staging.env ./.env
+cp ./env/production.env ./.env
 cat ./algolia.env >> ./.env
-cp ./env/staging.robots.txt ./static/robots.txt
+cp ./env/production.robots.txt ./static/robots.txt
 docusaurus build
-cp ./env/staging.CNAME ./build/CNAME
+cp ./env/production.CNAME ./build/CNAME

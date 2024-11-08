@@ -78,13 +78,13 @@ let contract_hash = match addressable_entity_key {
 };
 ```
 
-## The Address Merge in Condor
+## The Address Merge in Casper 2.0
 
-The "Address Merge" in the Condor upgrade of Casper is a foundational shift, impacting how accounts and smart contracts are identified and interacted with.  
+The "Address Merge" in Casper 2.0 is a foundational shift, impacting how accounts and smart contracts are identified and interacted with.  
 
 **Global State Transformation:**
 
-Post-Condor, all accounts and smart contract addresses residing within the global state will be automatically migrated to the `AddressableEntity` structure. This means the network itself will recognize and handle these entities using the new format.
+In Casper 2.0, all accounts and smart contract addresses residing within the global state will be automatically migrated to the `AddressableEntity` structure. This means the network itself will recognize and handle these entities using the new format.
 
 **Smart Contract Compatibility Considerations:**
 

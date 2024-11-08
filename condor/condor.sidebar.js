@@ -21,7 +21,7 @@ const sidebars = {
         'addressable-entity',
         'fee-elimination',
         'rpc-changes',
-        'setting-up-condor-local',
+        'local-setup',
         'transactions',
         'validator-rewards',
         'zug',

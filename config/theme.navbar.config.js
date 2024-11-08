@@ -58,7 +58,7 @@ module.exports = {
             type: "docSidebar",
             sidebarId: "condorSidebar",
             docsPluginId: 'condor',
-            label: "Condor Articles",
+            label: "Casper 2.0",
             position: "right",
         },
         // { 

@@ -7,9 +7,9 @@ authors: [ dylanireland, melpadden ]
 tags: [v2, features, tokenomics]
 hide_table_of_contents: false
 ---
-# Fee Elimination on Casper 2.0
+# Fee Elimination in Casper 2.0
 
-The Casper 2.0 (aka Condor) network upgrade introduces new options to the way a Casper Network can be configured to handle gas consumption. Scheduled along with the release of Condor into Mainnet is a change in the configuration of the Casper Network to use a model known as **Fee Elimination** for gas payments. The purpose of this article is to introduce this model, and describe how Fee Elimination will affect the behavior of the Casper Network once Condor is released.
+The Casper 2.0 network upgrade introduces new options to the way a Casper Network can be configured to handle gas consumption. Scheduled along with the release of Condor into Mainnet is a change in the configuration of the Casper Network to use a model known as **Fee Elimination** for gas payments. The purpose of this article is to introduce this model, and describe how Fee Elimination will affect the behavior of the Casper Network once Condor is released.
 
 <!-- truncate -->
 
@@ -45,7 +45,7 @@ A hold may be thought of as a temporary freeze on some portion of the funds in a
 The Casper Node 2.0 software currently supports two hold release models: **Accrued** and **Amortized**. 
 
 > 
-> The Condor node architecture allows for any time-based function to be developed and used to calculate hold releases. However, for simplicity, this article will deal with the two currently available options.
+> The Casper 2.0 node architecture allows for any time-based function to be developed and used to calculate hold releases. However, for simplicity, this article will deal with the two currently available options.
 
 #### Accrued
 100% of the hold is held until the hold expires. At any given point in the duration of the hold, the effective amount of the hold is 100%. At expiry, all of the funds are again made available to the transactor.

@@ -8,9 +8,9 @@ tags: [v2, setup]
 hide_table_of_contents: false
 ---
 
-# Setting Up a Local Casper Condor Network for Development
+# Setting Up a Local Casper 2.0 Network for Development
 
-Casper Condor is a major upgrade to the Casper Network. This guide walks you through creating a local Condor environment for testing and development using Dockerized NCTL and the Rust Casper Client.
+Casper 2.0 is a major upgrade to the Casper Network. This guide walks you through creating a local environment for testing and development using Dockerized NCTL and the Rust Casper Client.
 
 <!-- truncate -->
 
@@ -28,7 +28,7 @@ NCTL is your tool for managing the Casper network. We'll use a Dockerized versio
    cd casper-nctl-docker
    ```
 
-2. **Switch to the Condor Branch:**
+2. **Switch to the 2.0 Branch:**
    ```bash
    git checkout feat-2.0
    ```
@@ -91,7 +91,7 @@ NCTL is your tool for managing the Casper network. We'll use a Dockerized versio
 
 ## Part 2: Casper Client (Rust)
 
-To interact with your local Condor network, we'll use the Casper Client. You have two options for using the Casper Client:
+To interact with your local Casper 2.0 network, we'll use the Casper Client. You have two options for using the Casper Client:
 
 **Option 1: Using the Casper Client from the Docker Image**
 
@@ -106,7 +106,7 @@ To interact with your local Condor network, we'll use the Casper Client. You hav
    cd casper-client-rs
    ```
 
-2. **Switch to the Condor-Compatible Branch  (Optional):**
+2. **Switch to the Casper 2.0-Compatible Branch  (Optional):**
    ```bash
    git checkout feat-track-node-2.0
    ```
@@ -212,7 +212,7 @@ This allows you to visually explore blocks, transactions, and other details of y
 
 ## Important Notes
 
-* **Work in Progress:** Condor compatibility is still evolving. Some features may be unstable or incomplete.
+* **Work in Progress:** Casper 2.0 compatibility is still evolving. Some features may be unstable or incomplete.
 
 ## Additional Tips
 

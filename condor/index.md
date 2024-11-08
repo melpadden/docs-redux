@@ -73,12 +73,12 @@ Each validator then signs an echo message with the proposal's hash. Correct vali
 
 In cases where the network cannot reach consensus, for example, during a partition or failure, the round is skipped without penalizing the network’s performance. In other words, skippable rounds prevent the network from stalling.
 
-A detailed discussion of the Zug consensus may be found both in the [Casper documentation](http://docs.casper.network/) and in the [Condor Blog](http://docs.casper.network/blog). For a detailed description of the protocol, please refer to the [Zug Whitepaper](https://arxiv.org/abs/2205.06314)
+A detailed discussion of the Zug consensus may be found in the [Casper documentation](http://docs.casper.network/). For a detailed description of the protocol, please refer to the [Zug Whitepaper](https://arxiv.org/abs/2205.06314)
 
 ### New Transaction Model
 Casper 2.0 introduces the concept of a [Transaction](https://docs.casper.network/transactions-and-transaction-lifecycle/#execution-semantics-transactions), which replaces the existing Deploy concept. Transactions are a new structure that allows several ways for users to make changes to global state. They allow for a variety of Wasm-less interactions with the blockchain. These new interactions are more efficient than Deploys and provide a level of convenience that was not previously available. More more details, see the list of available [Transaction Types](https://docs.casper.network/transactions/#transaction-types).
 
-The existing Deploy model is deprecated as of Condor, and support will be removed entirely in a future major release. However, Condor will continue to accept valid Deploys and will attempt to execute them. Most existing deploys that function today will continue to do so. However, deploys that depend on a data type or FFI function that has been altered or removed will fail to execute.
+The existing Deploy model is deprecated as of Casper 2.0, and support will be removed entirely in a future major release. However, Casper 2.0 will continue to accept valid Deploys and will attempt to execute them. Most existing deploys that function today will continue to do so. However, deploys that depend on a data type or FFI function that has been altered or removed will fail to execute.
 
 #### Account/Contract unification 
 > 
@@ -92,11 +92,11 @@ There are three fundamental types of Addressable Entity:
 - Deployed Smart Contracts
 
 ##### Account Unification upgrade path
-This feature is a fundamental change to the way that smart contracts interact with the network and each other. Moving to this feature requires that applications using smart contracts must analyse, rework and retest their code in order to ensure that their applications will work as intended. Therefore, the initial release of Condor will not turn this feature on. At some point in the future, once agreed by the people participating in the network, an update to the network will be issued which activates this feature. This step will not be reversible. 
+This feature is a fundamental change to the way that smart contracts interact with the network and each other. Moving to this feature requires that applications using smart contracts must analyse, rework and retest their code in order to ensure that their applications will work as intended. Therefore, the initial release of Casper 2.0 will not turn this feature on. At some point in the future, once agreed by the people participating in the network, an update to the network will be issued which activates this feature. This step will not be reversible. 
 
 ### Fee Elimination
 
-Scheduled along with the release of Caper 2.0 is a change in the configuration of the Casper Network to use a model known as **Fee Elimination** for gas payments. 
+Scheduled along with the release of Casper 2.0 is a change in the configuration of the Casper Network to use a model known as **Fee Elimination** for gas payments. 
 
 > __Fee Elimination is the strategy of placing temporary holds on transactor balances corresponding to their incurred gas costs, instead of taking those costs from their on-chain balances__.
 
@@ -132,7 +132,7 @@ In Casper 2.0 users can burn CSPR token. This function is exposed as a `burn` fu
 ---
 
 ### Deprecations
-The get_state_item RPC endpoint, while not yet deprecated, will be deprecated in a future release cycle uin favour of the more flexible get_global_state endpoint. This endpoint was initially deprecated, but was left in to the v2.0 release to maintain backwards compatibility while downstream development teams upgrade their code to reflect this change. For more details please see [here](https://github.com/casper-network/condor-info/discussions/2).
+The `get_state_item` RPC endpoint, while not yet deprecated, will be deprecated in a future release cycle uin favour of the more flexible get_global_state endpoint. This endpoint was initially deprecated, but was left in to the v2.0 release to maintain backwards compatibility while downstream development teams upgrade their code to reflect this change. For more details please see [here](https://github.com/casper-network/condor-info/discussions/2).
 
 ---
 
@@ -140,11 +140,10 @@ The get_state_item RPC endpoint, while not yet deprecated, will be deprecated in
 - Activation of the Contract/Account unification feature.
 - Activation of Virtual Machine 2.0.
 - Deprecation of `the get_state_item` endpoint.
-
 ---
 
 ### Official Documentation
-For reference documentation on Casper including Condor/v2.0, please refer to the complete documentation available [here](http://docs.casper.network). Worth noting is that we have implemented documentation versioning, i.e. you may select the version of the documentation you wish to view from a drop-down in the top right of the navigation bar. This allows you to compare some topics with their former version to see what has changed. all Condor-related information is to be found in the v2.0.0 of the documentation.
+For reference documentation on Casper including Casper v2.0, please refer to the complete documentation available [here](http://docs.casper.network). Worth noting is that we have implemented documentation versioning, i.e. you may select the version of the documentation you wish to view from a drop-down in the top right of the navigation bar. This allows you to compare some topics with their former version to see what has changed.
 
 #### Support Channels
 
@@ -155,10 +154,9 @@ You can use any of our official channels to ask for more information or raise an
 | Description | Type | Link |
 | ----- | ----- | ------ |
 | Official Casper Support | Telegram | https://t.me/casperblockchainsupport |
-| Condor-Specific Support | Telegram | https://t.me/CSPRCondor |
 |  |  |  |
 
-Thank you for using Casper v2.0 - Condor! We hope these new features and improvements enhance your experience. Please feel free to share feedback or report issues through our support channels.
+Thank you for using Casper v2.0! We hope these new features and improvements enhance your experience. Please feel free to share feedback or report issues through our support channels.
 
 Thank you,  
 **Casper Development Team**
