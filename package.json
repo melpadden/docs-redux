@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "docusaurus start",
+    "start": "bash ./scripts/build-dev.sh && docusaurus start",
     "serve": "docusaurus serve",
     "build": "NODE_ENV=production && docusaurus build",
     "build-dev": "bash ./scripts/build-dev.sh",
