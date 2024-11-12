@@ -1,4 +1,4 @@
-name: Deployment to Staging
+name: Deployment 
 on:
   workflow_dispatch:
     # Review gh actions docs if you want to further define triggers, paths, etc
@@ -7,8 +7,8 @@ on:
 env:
   BUILD_DIR: ./build
 jobs:
-  build-staging:
-    name: Build Staging
+  build:
+    name: Build 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,7 +20,7 @@ jobs:
           node-version: 23
           cache: yarn
           
-      - name: Generate Algolia vars - staging
+      - name: Generate Algolia vars
         if: github.ref == 'refs/heads/dev'
         uses: cuchi/jinja2-action@v1.2.2
         with:
@@ -45,7 +45,7 @@ jobs:
 
   deploy:
     name: Deploy to GitHub Pages
-    needs: build-staging
+    needs: build
     runs-on: ubuntu-latest
     # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
     permissions:
