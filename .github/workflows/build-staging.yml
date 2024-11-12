@@ -6,7 +6,20 @@ on:
 
 env:
   BUILD_DIR: ./build
+  ALGOLIA_APP_ID: ${{ vars.ALGOLIA_APP_ID }}
+  ALGOLIA_INDEX_NAME: ${{ vars.ALGOLIA_INDEX_NAME }}  
+  ALGOLIA_API_KEY: ${{ vars.ALGOLIA_API_KEY }}
 jobs:
+  debug:
+    name: Debug
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print variables
+        run: |
+          echo "ALGOLIA_APP_ID : $ALGOLIA_APP_ID"
+          echo "ALGOLIA_INDEX_NAME : $ALGOLIA_INDEX_NAME"
+          echo "ALGOLIA_API_KEY : $ALGOLIA_API_KEY"
+
   build:
     name: Build 
     runs-on: ubuntu-latest
@@ -27,14 +40,14 @@ jobs:
           template: .github/templates/.env.staging.j2
           output_file: algolia.env
         env:
-          ALGOLIA_APP_ID: ${{ vars.ALGOLIA_APP_ID }}
-          ALGOLIA_INDEX_NAME: ${{ vars.ALGOLIA_INDEX_NAME }}
-          ALGOLIA_API_KEY: ${{ vars.ALGOLIA_API_KEY }}
+          ALGOLIA_APP_ID: $ALGOLIA_APP_ID 
+          ALGOLIA_INDEX_NAME: $ALGOLIA_INDEX_NAME 
+          ALGOLIA_API_KEY: $ALGOLIA_API_KEY 
 
       - name: Install dependencies
         run: yarn install 
 
-      - name: Build website in staging confuguration
+      - name: Build website in staging configuration
         run: yarn build-staging
         
       - name: Upload Build Artifact
