@@ -10,10 +10,6 @@ env:
   ALGOLIA_INDEX_NAME: ${{ vars.ALGOLIA_INDEX_NAME }}  
   ALGOLIA_API_KEY: ${{ vars.ALGOLIA_API_KEY }}
 jobs:
-  debug:
-    name: Debug
-    runs-on: ubuntu-latest
-
   build:
     name: Build 
     runs-on: ubuntu-latest
