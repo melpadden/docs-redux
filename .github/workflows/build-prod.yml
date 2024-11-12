@@ -1,4 +1,4 @@
-name: Deployment 
+name: Deployment Production
 on:
   workflow_dispatch:
     # Review gh actions docs if you want to further define triggers, paths, etc
