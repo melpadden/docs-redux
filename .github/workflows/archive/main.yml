@@ -5,11 +5,11 @@ env:
   selected_node_version: 21.6
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    types: [ opened, reopened, synchronize ]
+  # push:
+  #   branches:
+  #     - main
+  # pull_request:
+  #   types: [ opened, reopened, synchronize ]
 
 jobs:
   backup:
