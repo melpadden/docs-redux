@@ -51,7 +51,7 @@ jobs:
 
       - name: Add new line
         run: |
-            echo "\n" >> ./.env
+            echo " " >> ./.env
 
       - name: Concatenate algolia vars to config
         run: |
