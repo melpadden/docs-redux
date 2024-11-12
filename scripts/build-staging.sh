@@ -1,5 +1,4 @@
 #!/bin/bash
-yarn clear
 cp ./env/staging.env ./.env
 echo "\n" >> ./.env
 cat ./algolia.env >> ./.env
