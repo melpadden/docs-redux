@@ -1,4 +1,5 @@
 {
+  "home": ["concepts/about", "disclaimer"],
   "concepts": [
     "concepts/index",
     "concepts/about",

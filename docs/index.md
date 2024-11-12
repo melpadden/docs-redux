@@ -27,9 +27,8 @@ The Nav bar is along the top of your screen and contains the following elements 
 - **Resources**  
   This The Resources section contains general information that is useful to many users of the chain.
 
-
 - **Search**  
-  Standard text-bysed Search facility, searches both the Blog and the Casper Docs for your search queries.
+  Standard text-based Search facility, searches both the Blog and the Casper Docs for your search queries.
 
 - **Feedback**  
   Allows you to submit requests for improvement to this docs site.
@@ -38,9 +37,7 @@ The Nav bar is along the top of your screen and contains the following elements 
   This brings you to the blog posts tagged with "Condor".
 
 - **Blog**  
-  This brings you to the Bliog secton of the docs site, where long form articles can be published. 
-
-
+  This brings you to the Blog section of the docs site, where long form articles can be published. 
 
 ### Disclaimer
 

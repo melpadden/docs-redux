@@ -1,8 +1,3 @@
-const globalConfig = require("../global.config");
-let routePrefix = globalConfig.routePrefix;
-// const baseUrl = globalConfig.baseUrl;
-// if (baseUrl && baseUrl !== "/") { routePrefix = `${baseUrl}/${routePrefix}`; }
-console.log(`routePrefix: ${routePrefix}`);
 module.exports = {
     title: "",
     logo: {
@@ -11,6 +6,13 @@ module.exports = {
         srcDark: "/icon/Casper_Wordmark_Red_RGB.png",
     },
     items: [
+        // {
+        //     type: "docSidebar",
+        //     sidebarId: "home",
+        //     label: "Home",
+        //     position: "left",
+        // },
+
         {
             type: "docSidebar",
             sidebarId: "concepts",
@@ -47,10 +49,17 @@ module.exports = {
             label: "Tutorials",
             position: "left",
         },
+        // {
+        //     to: 'pages/condor/',
+        //     label: 'Condor Articles',
+        //     position: 'right'
+        // },
         {
-            to: 'pages/condor/', 
-            label: 'Condor Articles', 
-            position: 'right' 
+            type: "docSidebar",
+            sidebarId: "condorSidebar",
+            docsPluginId: 'condor',
+            label: "Casper 2.0",
+            position: "right",
         },
         // { 
         //     to: 'blog', 

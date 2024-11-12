@@ -23,7 +23,7 @@ module.exports = {
             position: "right",
         },
         {
-            href: "https://github.com/casper-devrel/docs-redux",
+            href: "https://github.com/casper-network/docs-redux",
             label: "GitHub",
             position: "right",
         },
