@@ -1,3 +1,4 @@
+```json copy
 {
   "name": "info_get_deploy",
   "summary": "returns a Deploy from the network (DEPRECATED: use `info_get_transaction` instead)",
@@ -176,3 +177,4 @@
     }
   ]
 }
+```

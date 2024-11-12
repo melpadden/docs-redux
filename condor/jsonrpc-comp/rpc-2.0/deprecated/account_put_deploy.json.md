@@ -1,6 +1,7 @@
+```json copy
 {
   "name": "account_put_deploy",
-  "summary": "receives a Deploy to be executed by the network",
+  "summary": "receives a Deploy to be executed by the network (DEPRECATED: use `account_put_transaction` instead)",
   "params": [
     {
       "name": "deploy",
@@ -94,10 +95,11 @@
       "result": {
         "name": "account_put_deploy_example_result",
         "value": {
-          "api_version": "1.5.6",
+          "api_version": "2.0.0",
           "deploy_hash": "5c9b3b099c1378aa8e4a5f07f59ff1fcdc69a83179427c7e67ae0377d94d93fa"
         }
       }
     }
   ]
 }
+```
