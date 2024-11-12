@@ -1,7 +1,7 @@
-import themeNavbarConfig from "./theme.navbar.config";
-import themeFooterConfig from "./theme.footer.config";
-import themeAlgoliaConfig from "./theme.algolia.config";
-import announcementBarConfig from "./announcementBar.config";
+import themeNavbarConfig from "./theme.navbar.config.js";
+import themeFooterConfig from "./theme.footer.config.js";
+import themeAlgoliaConfig from "./theme.algolia.config.js";
+import announcementBarConfig from "./announcementBar.config.js";
 
 module.exports = {
     themeNavbarConfig,
@@ -9,3 +9,5 @@ module.exports = {
     themeAlgoliaConfig,
     announcementBarConfig
 };
+
+export { themeNavbarConfig, themeFooterConfig, themeAlgoliaConfig, announcementBarConfig };

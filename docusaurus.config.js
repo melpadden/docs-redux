@@ -3,9 +3,9 @@
 // (when paired with `@ts-check`).
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
-import {envConfig} from "./env.config.js";
-import {themeNavbarConfig, themeFooterConfig, themeAlgoliaConfig, announcementBarConfig} from "./config";
-import {themes as prismThemes} from "prism-react-renderer";
+import { envConfig } from "./env.config.js";
+import { themeNavbarConfig, themeFooterConfig, themeAlgoliaConfig, announcementBarConfig } from "./config/index.js";
+import { themes as prismThemes } from "prism-react-renderer";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -92,7 +92,7 @@ const config = {
         ],
     ],
     themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+        /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
         ({
             colorMode: {
                 defaultMode: "dark",
