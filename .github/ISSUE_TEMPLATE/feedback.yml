@@ -1,13 +1,10 @@
 name: Docs v2 Feedback Form
-description: Use this form to give us feedback on Docs v2
+description: Use this form to give us feedback on Docs v2. Be as detailed as you can. If your feedback
+  is about a specific page or area, please be sure to include a link. '
 title: '[Docs-V2-Feedback]'
 labels:
   - docs-v2-feedback
 body:
-  - type: markdown
-    attributes:
-      value: |
-        This is a feedback form
   - type: dropdown
     id: type
     attributes:
@@ -27,6 +24,14 @@ body:
       placeholder: john@doe.com
     validations:
       required: false
+  - type: input
+    id: issue-location
+    attributes:
+      label: Location in Docs
+      placeholder: '[docs.casper.network/home]'
+      description: Where in the docs is this issue. If there is no location, leave the placeholder.
+    validations:
+      required: true
   - type: textarea
     id: issue-description
     attributes:
