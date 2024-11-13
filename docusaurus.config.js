@@ -114,6 +114,10 @@ const config = {
                 ignorePatterns: ['/tags/**'],
                 filename: 'sitemap.xml',
             },
+            tableOfContents: {  
+                minHeadingLevel: 1,
+                maxHeadingLevel: 20
+            }
         }),
     plugins: [
         [

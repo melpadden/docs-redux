@@ -1,0 +1,118 @@
+yarn run v1.22.22
+$ NODE_ENV=production && docusaurus build
+
+    ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+                                                                                                                                                                                       
+                                                                              Update available 3.6.0 → 3.6.1                                                                           
+                                                                                                                                                                                       
+                                                     To upgrade Docusaurus packages with the latest version, run the following command:                                                
+         `yarn upgrade @docusaurus/core@latest @docusaurus/plugin-sitemap@latest @docusaurus/preset-classic@latest @docusaurus/module-type-aliases@latest @docusaurus/types@latest`    
+                                                                                                                                                                                       
+    ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+{
+  title: 'Casper Docs - Redux',
+  tagline: 'Casper Documentation',
+  favicon: 'icon/favicon.ico',
+  url: 'http://docs-redux.melpadden.com',
+  baseUrl: '/',
+  organizationName: 'melpadden',
+  projectName: 'docs-redux',
+  deploymentBranch: '"gh-pages"\n',
+  trailingSlash: false,
+  onBrokenLinks: 'warn',
+  onBrokenMarkdownLinks: 'warn',
+  onDuplicateRoutes: 'throw',
+  markdown: { format: 'detect' },
+  presets: [ [ 'classic', [Object] ] ],
+  themeConfig: {
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: false,
+      respectPrefersColorScheme: true
+    },
+    algolia: {
+      appId: 'JFUJ1F4WMS',
+      apiKey: 'f87381f4b677b2613f4f8ec9d640ce3a',
+      indexName: 'docs-redux-mel',
+      contextualSearch: true,
+      externalUrlRegex: 'external\\.com|domain\\.com',
+      replaceSearchResultPathname: [Object],
+      searchParameters: {},
+      searchPagePath: 'search',
+      insights: false
+    },
+    navbar: { title: '', logo: [Object], items: [Array] },
+    footer: {
+      logo: [Object],
+      copyright: 'Copyright © 2024 Casper Association. Built with Docusaurus.',
+      links: [Array]
+    },
+    prism: { theme: [Object], darkTheme: [Object] },
+    sitemap: {
+      lastmod: 'datetime',
+      changefreq: 'hourly',
+      priority: 0.5,
+      ignorePatterns: [Array],
+      filename: 'sitemap.xml'
+    }
+  },
+  plugins: [ [ '@docusaurus/plugin-content-docs', [Object] ] ]
+}
+[INFO] [en] Creating an optimized production build...
+{
+  title: 'Casper Docs - Redux',
+  tagline: 'Casper Documentation',
+  favicon: 'icon/favicon.ico',
+  url: 'http://docs-redux.melpadden.com',
+  baseUrl: '/',
+  organizationName: 'melpadden',
+  projectName: 'docs-redux',
+  deploymentBranch: '"gh-pages"\n',
+  trailingSlash: false,
+  onBrokenLinks: 'warn',
+  onBrokenMarkdownLinks: 'warn',
+  onDuplicateRoutes: 'throw',
+  markdown: { format: 'detect' },
+  presets: [ [ 'classic', [Object] ] ],
+  themeConfig: {
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: false,
+      respectPrefersColorScheme: true
+    },
+    algolia: {
+      appId: 'JFUJ1F4WMS',
+      apiKey: 'f87381f4b677b2613f4f8ec9d640ce3a',
+      indexName: 'docs-redux-mel',
+      contextualSearch: true,
+      externalUrlRegex: 'external\\.com|domain\\.com',
+      replaceSearchResultPathname: [Object],
+      searchParameters: {},
+      searchPagePath: 'search',
+      insights: false
+    },
+    navbar: { title: '', logo: [Object], items: [Array] },
+    footer: {
+      logo: [Object],
+      copyright: 'Copyright © 2024 Casper Association. Built with Docusaurus.',
+      links: [Array]
+    },
+    prism: { theme: [Object], darkTheme: [Object] },
+    sitemap: {
+      lastmod: 'datetime',
+      changefreq: 'hourly',
+      priority: 0.5,
+      ignorePatterns: [Array],
+      filename: 'sitemap.xml'
+    }
+  },
+  plugins: [ [ '@docusaurus/plugin-content-docs', [Object] ] ]
+}
+[webpackbar] ℹ Compiling Client
+[webpackbar] ℹ Compiling Server
+[webpackbar] ✔ Server: Compiled successfully in 28.39s
+[webpackbar] ✔ Client: Compiled successfully in 35.37s
+[SUCCESS] Generated static files in "build".
+[INFO] Use `npm run serve` command to test your build locally.
+Done in 56.69s.

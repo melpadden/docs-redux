@@ -20,6 +20,7 @@ We are excited to announce the release of **Casper v2.0 - formerly known as Cond
 <!-- truncate -->
 
 
+
 ## Major Changes at a glance
 
 ### Architectural Changes

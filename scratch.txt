@@ -1,2 +1,5 @@
   "2.0.0",
   "1.5.X"
+
+
+<script src="https://api.lingoblocks.com/chatbot-embed.js" data-lingo-id="8JUOTdQ1WRpJRsYckOYr" defer type="module"></script>
