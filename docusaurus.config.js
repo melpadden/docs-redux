@@ -115,8 +115,8 @@ const config = {
                 filename: 'sitemap.xml',
             },
             tableOfContents: {  
-                minHeadingLevel: 1,
-                maxHeadingLevel: 20
+                minHeadingLevel: 2,
+                maxHeadingLevel: 6
             }
         }),
     plugins: [
