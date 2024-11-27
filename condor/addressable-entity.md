@@ -32,7 +32,7 @@ An `EntityAddr` serves as the address for an `AddressableEntity`. It not only en
 
 **AddressableEntityHash**
 
-The `AddressableEntityHash` is a newtype wrapper around a 32-byte hash (`HashAddr`). This hash functions as a unique identifier for the `AddressableEntity`, typically derived from either the account's public key or the smart contract's hash using hashing algorithm.
+The `AddressableEntityHash` is a new type wrapper around a 32-byte hash (`HashAddr`). This hash functions as a unique identifier for the `AddressableEntity`, typically derived from either the account's public key or the smart contract's hash using hashing algorithm.
 
 ## The inner workings of AddressableEntity
 

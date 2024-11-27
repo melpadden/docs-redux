@@ -74,7 +74,7 @@ number|merged_at|url|title|Feature|Change Type
 4590|2024-03-13 01:13:52+00:00|https://github.com/casper-network/casper-node/pull/4590|184 update deploy buffer mods|Transactions|Refactor
 4591|2024-06-10 15:29:23+00:00|https://github.com/casper-network/casper-node/pull/4591|Update Doc disable/enable_contract_version|ExEng|Fix
 4592|2024-03-15 21:03:12+00:00|https://github.com/casper-network/casper-node/pull/4592|Add a binary request for dictionary items|BinaryPort|Sidecar
-4596|2024-03-13 17:18:34+00:00|https://github.com/casper-network/casper-node/pull/4596|Fix `client.sh` nighly test|Core|Fix
+4596|2024-03-13 17:18:34+00:00|https://github.com/casper-network/casper-node/pull/4596|Fix `client.sh` nightly test|Core|Fix
 4597|2024-03-11 18:49:34+00:00|https://github.com/casper-network/casper-node/pull/4597|Ensure there is at least one txn when calling `random_with_specifics()`|Transactions|Enhance
 4598|2024-03-13 00:20:54+00:00|https://github.com/casper-network/casper-node/pull/4598|Update example config|Transactions|TestFix
 4599|2024-03-15 22:18:44+00:00|https://github.com/casper-network/casper-node/pull/4599|Expose latest switch block information in the binary port|BinaryPort|Enhance
@@ -91,7 +91,7 @@ number|merged_at|url|title|Feature|Change Type
 4617|2024-04-09 16:07:30+00:00|https://github.com/casper-network/casper-node/pull/4617|Fix rewards distribution|Rewards|Bugfix
 4618|2024-03-22 14:13:20+00:00|https://github.com/casper-network/casper-node/pull/4618|Update block parsing code in NCTL|NCTL|Enhance
 4620|2024-03-27 12:02:38+00:00|https://github.com/casper-network/casper-node/pull/4620|Update juliet server settings|Core|Fix
-4622|2024-03-22 14:13:35+00:00|https://github.com/casper-network/casper-node/pull/4622|Use consistent administrator account in both 'accounts' and 'chainspe…|Core|Fix
+4622|2024-03-22 14:13:35+00:00|https://github.com/casper-network/casper-node/pull/4622|Use consistent administrator account in both 'accounts' and 'chainspec' Core|Fix
 4624|2024-03-26 13:57:11+00:00|https://github.com/casper-network/casper-node/pull/4624|Remove redundant flaky test|Tests|FixTest
 4625|2024-03-22 17:08:20+00:00|https://github.com/casper-network/casper-node/pull/4625|Remove `add_session_version`|ExEng|Fix
 4626|2024-03-26 16:26:55+00:00|https://github.com/casper-network/casper-node/pull/4626|Move NCTL to a separate repo|NCTL|Refactor
@@ -104,7 +104,7 @@ number|merged_at|url|title|Feature|Change Type
 4640|2024-05-06 22:47:05+00:00|https://github.com/casper-network/casper-node/pull/4640|burn implemented|Core|Enhance
 4642|2024-04-04 13:59:53+00:00|https://github.com/casper-network/casper-node/pull/4642|Decouple Refund and Fee handling|ExEng|Refactor
 4643|2024-04-05 16:42:54+00:00|https://github.com/casper-network/casper-node/pull/4643|Changes needed for downstream apps to work with `feat-2.0`|ExEng|Fix
-4644|2024-04-25 19:57:27+00:00|https://github.com/casper-network/casper-node/pull/4644|Add tracking of size and consumption in determing block utilization|ExEng|Refactor
+4644|2024-04-25 19:57:27+00:00|https://github.com/casper-network/casper-node/pull/4644|Add tracking of size and consumption in determining block utilization|ExEng|Refactor
 4645|2024-04-10 18:11:22+00:00|https://github.com/casper-network/casper-node/pull/4645|Binary port balance query|BinaryPort|Enhance
 4646|2024-04-08 14:30:42+00:00|https://github.com/casper-network/casper-node/pull/4646|Add 'latest_switch_block_hash' field to rest status endpoint|RPC|Enhance
 4648|2024-04-09 13:12:24+00:00|https://github.com/casper-network/casper-node/pull/4648|Fix for StoredValue::ContractPackage not json-deserializable|ExEng|Bugfix

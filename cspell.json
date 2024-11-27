@@ -1,0 +1,69 @@
+// cSpell Settings
+{
+    // Version of the setting file.  Always 0.2
+    "version": "0.2",
+    // language - current active spelling language
+    "language": "en",
+    "ignorePaths": [
+        "node_modules/**",
+        "*.json.md"
+    ],
+    // words - list of words to be always considered correct
+    "words": [
+        "alexanderlimonov",
+        "appendable",
+        "asladeofgreen",
+        "blocktime",
+        "blocktimes",
+        "bytesrepr",
+        "calltable",
+        "casper",
+        "casper-ecosystem",
+        "casper-labs",
+        "casper-network",
+        "casper-node",
+        "CCTL",
+        "chainspec",
+        "delegators",
+        "deser",
+        "disincentivizes",
+        "dockerized",
+        "dylanireland",
+        "githubusercontent",
+        "gitoxide",
+        "impls",
+        "incentivizing",
+        "inmem",
+        "melpadden",
+        "merkle",
+        "miswire",
+        "mkdirp",
+        "mynctl",
+        "NCTL",
+        "redelegate",
+        "RUSTSEC",
+        "sczembor",
+        "smartcontracts",
+        "streetsidesoftware",
+        "Testfix",
+        "tokenomics",
+        "tsmerge",
+        "unbonding",
+        "unbonds",
+        "undelegate",
+        "unstaked",
+        "uref",
+        "userland",
+        "vergen",
+        "visualstudio",
+        "vsmarketplacebadge",
+        "wireup",
+        "X"
+    ],
+    // flagWords - list of words to be always considered incorrect
+    // This is useful for offensive words and common spelling errors.
+    // For example "hte" should be "the"
+    "flagWords": [
+        "hte"
+    ]
+}

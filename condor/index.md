@@ -33,8 +33,8 @@ In Casper 2.0, the JSON RPC has been moved to a separate process, known as the [
  - It allows for better process isolation and makes it easier to run and debug node processes.
  - The Sidecar provides a way to surface Contract Level Events, which opens up some interesting possibilities for node interactions.
  - The separation of the Sidecar into a new codebase means that enhancements to the RPC API can now be accomplished without changing the node binary, necessitating a network upgrade. 
- - DDOS attacks on the RPC server do not necessarily affect to running of the node, becasue the RPC process can brought down without affecting the node process itself. 
- 
+ - DDOS attacks on the RPC server do not necessarily affect to running of the node, because the RPC process can brought down without affecting the node process itself. 
+
 Moving the RPC to its own process improves network durability, code maintainability, and allows for more frequent updates to the RPC itself.
 
 #### Expanded API Integration Options
@@ -95,7 +95,7 @@ There are three fundamental types of Addressable Entity:
 - Deployed Smart Contracts
 
 ##### Account Unification upgrade path
-This feature is a fundamental change to the way that smart contracts interact with the network and each other. Moving to this feature requires that applications using smart contracts must analyse, rework and retest their code in order to ensure that their applications will work as intended. Therefore, the initial release of Casper 2.0 will not turn this feature on. At some point in the future, once agreed by the people participating in the network, an update to the network will be issued which activates this feature. This step will not be reversible. 
+This feature is a fundamental change to the way that smart contracts interact with the network and each other. Moving to this feature requires that applications using smart contracts must analyze, rework and retest their code in order to ensure that their applications will work as intended. Therefore, the initial release of Casper 2.0 will not turn this feature on. At some point in the future, once agreed by the people participating in the network, an update to the network will be issued which activates this feature. This step will not be reversible. 
 
 ### Fee Elimination
 
@@ -130,11 +130,16 @@ Among the improvements in VM 2.0 are:
 Casper 2.0 FFI introduces access to some additional hashing algorithms, as well as providing access to information about the block info, including hash and parent block hash. 
 
 ### CSPR Burn function
-In Casper 1.X burning of CSPR token was restricted. Burning of token was originally designed to enable such things as punitive measures and was inaccesisble to the general user. In Casper 2.0 the feature is available for general use, and users can now burn CSPR token. This function is exposed as a `burn` function in the mint contract. Burning tokens reduces the total supply, which indirectly affects reward schemes and other algorithmic calculations.
+In Casper 1.X burning of CSPR token was restricted. Burning of token was originally designed to enable such things as punitive measures and was inaccessible to the general user. In Casper 2.0 the feature is available for general use, and users can now burn CSPR token. This function is exposed as a `burn` function in the mint contract. Burning tokens reduces the total supply, which indirectly affects reward schemes and other algorithmic calculations.
 
-### Contract Staking
+### [Contract Staking](./contract-staking.md)
 What is Contract Staking?
 Contract staking involves allowing a smart contract to participate in staking mechanisms such as delegation. Tokens from a contract-controlled purse can be staked on a validator node. 
+
+
+### [Slot Reservation](./slot-reservation.md)
+In Casper 2.0, A validator can interact with the host to reserve some of their delegator slots for specific other parties. They can also reclaim / unreserve such slots. 
+
 
 ---
 

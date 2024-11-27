@@ -35,7 +35,7 @@ Instead of relying on public keys for identity, staking is linked directly to pu
 - Ensuring the destination of returns (unstaked tokens and rewards) is correctly mapped.
 
 ### Permission Management:
-Managing access to any smart contract endpoint that uises this feature is a userland concern, i.e. shoudl be programmed by the Smart Contract author. A given smart contract instance needs to provision a purse, and call the auction via call_contract, passing the action (delegate, undelegate, redelegate) and the args. Securing access to that shooudl be treated exactly like securing any other smart contract endpoint. 
+Managing access to any smart contract endpoint that uses this feature is a userland concern, i.e. should be programmed by the Smart Contract author. A given smart contract instance needs to provision a purse, and call the auction via call_contract, passing the action (delegate, undelegate, redelegate) and the args. Securing access to that should be treated exactly like securing any other smart contract endpoint. 
 
 An example of this in action can be found here:
  - Installer: https://github.com/casper-network/casper-node/pull/4976/files#diff-e38aca6299ae33c901c55e656c496a22a769e5eeafd4fb2c014afacca3aacaf6R1

@@ -19,9 +19,12 @@ const sidebars = {
     condorSidebar: [
         'index',
         'addressable-entity',
+        'contract-staking',
+        'cspr-burn',
         'fee-elimination',
-        'rpc-changes',
         'local-setup',
+        'rpc-changes',
+        'slot-reservation',
         'transactions',
         'validator-rewards',
         'zug',
