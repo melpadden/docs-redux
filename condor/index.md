@@ -24,15 +24,18 @@ We are excited to announce the release of **Casper v2.0 - formerly known as Cond
 
 ### Architectural Changes
 
-Casper v2.0 introduces a number of improvements aimed at removing some limitations of the Casper platform and dealing with technical debt. Some of the limitations in Casper 1.X were due to architectural decisions that impeded efforts to introduce new features without breaking existing systems. 
+Casper v2.0 introduces a number of enhancements to the Casper platform, some of which are visible to the end user, and some of which are more architectural in nature. This is because some of the limitations in Casper 1.X were due to architectural decisions taken at the start of the project, which impeded efforts to introduce new features without breaking existing systems. Therefore, it makes sense to deal with these issues at the same time as introducing a significant amount of new features, some of which depend upon this restructuring. 
 
 #### Casper Sidecar
-In Casper 2.0, the existing RPC service has been moved outside of the node software itself. In Casper 1.X, the RPC service existed as an HTTP server which was built into the node software itself. This meant that the RPC server was tightly coupled to the node software, could not be updated without updating the node software, and executed in the same process space as the node. The result of this was that any extension of the RPC surface necessitated a full network upgrade to deliver. 
+In Casper 2.0, the existing RPC service has been moved outside of the node software itself. In Casper 1.X, the RPC service existed as an HTTP server which was built into the node software itself. This meant that the RPC server was tightly coupled to the node software, could not be updated without updating the node software, and executed in the same process space as the node. The result of this was that any extension of the RPC surface necessitated a full network upgrade to deliver. Also, any successful DDOS attack on the RPC service would affect the node as well. 
 
 In Casper 2.0, the JSON RPC has been moved to a separate process, known as the [Sidecar](https://docs.casper.network/operators/setup/casper-sidecar/). This step brings a few improvements: 
  - It allows for better process isolation and makes it easier to run and debug node processes.
  - The Sidecar provides a way to surface Contract Level Events, which opens up some interesting possibilities for node interactions.
  - The separation of the Sidecar into a new codebase means that enhancements to the RPC API can now be accomplished without changing the node binary, necessitating a network upgrade. 
+ - DDOS attacks on the RPC server do not necessarily affect to running of the node, becasue the RPC process can brought down without affecting the node process itself. 
+ 
+Moving the RPC to its own process improves network durability, code maintainability, and allows for more frequent updates to the RPC itself.
 
 #### Expanded API Integration Options
 Casper 2.0 introduces some extensions to the ways in which you can interact with the Casper Network.
@@ -127,7 +130,11 @@ Among the improvements in VM 2.0 are:
 Casper 2.0 FFI introduces access to some additional hashing algorithms, as well as providing access to information about the block info, including hash and parent block hash. 
 
 ### CSPR Burn function
-In Casper 2.0 users can burn CSPR token. This function is exposed as a `burn` function in the mint contract.  
+In Casper 1.X burning of CSPR token was restricted. Burning of token was originally designed to enable such things as punitive measures and was inaccesisble to the general user. In Casper 2.0 the feature is available for general use, and users can now burn CSPR token. This function is exposed as a `burn` function in the mint contract. Burning tokens reduces the total supply, which indirectly affects reward schemes and other algorithmic calculations.
+
+### Contract Staking
+What is Contract Staking?
+Contract staking involves allowing a smart contract to participate in staking mechanisms such as delegation. Tokens from a contract-controlled purse can be staked on a validator node. 
 
 ---
 
